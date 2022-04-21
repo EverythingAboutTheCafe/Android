@@ -18,6 +18,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!-- 클라이언트 ID 추가 -->
+        <meta-data android:name="com.naver.maps.map.CLIENT_ID" android:value="87qtkhrwig" />
     </application>
 
 </manifest>
