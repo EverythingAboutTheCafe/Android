@@ -46,4 +46,7 @@ dependencies {
 
     // 네이버 map api
     implementation("com.naver.maps:map-sdk:3.14.1")
+
+    // fragment
+    implementation "androidx.fragment:fragment-ktx:1.4.1"
 }

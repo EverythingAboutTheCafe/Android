@@ -4,9 +4,16 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/atn1s/Desktop/camoandroid/app/src/main/res/drawable/ic_home_icon_gray.xml" value="0.23333333333333334" />
+        <entry key="..\:/Users/atn1s/Desktop/camoandroid/app/src/main/res/drawable/selector_home_icon.xml" value="0.23148148148148148" />
         <entry key="..\:/Users/atn1s/Desktop/camoandroid/app/src/main/res/drawable/selector_navigation_home.xml" value="0.23333333333333334" />
+        <entry key="..\:/Users/atn1s/Desktop/camoandroid/app/src/main/res/drawable/selector_profile_icon.xml" value="0.23148148148148148" />
+        <entry key="..\:/Users/atn1s/Desktop/camoandroid/app/src/main/res/drawable/selector_timeline_icon.xml" value="0.23148148148148148" />
+        <entry key="..\:/Users/atn1s/Desktop/camoandroid/app/src/main/res/drawable/selector_write_icon.xml" value="0.23148148148148148" />
         <entry key="..\:/Users/atn1s/Desktop/camoandroid/app/src/main/res/layout/activity_main.xml" value="0.2477355072463768" />
         <entry key="..\:/Users/atn1s/Desktop/camoandroid/app/src/main/res/layout/fragment_home.xml" value="0.25364583333333335" />
+        <entry key="..\:/Users/atn1s/Desktop/camoandroid/app/src/main/res/layout/fragment_profile.xml" value="0.25364583333333335" />
+        <entry key="..\:/Users/atn1s/Desktop/camoandroid/app/src/main/res/layout/fragment_timeline.xml" value="0.25364583333333335" />
+        <entry key="..\:/Users/atn1s/Desktop/camoandroid/app/src/main/res/layout/fragment_write.xml" value="0.25364583333333335" />
         <entry key="..\:/Users/atn1s/Desktop/camoandroid/app/src/main/res/menu/main_menu.xml" value="0.25364583333333335" />
       </map>
     </option>
