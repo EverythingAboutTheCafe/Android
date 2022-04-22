@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/main_navigation"
     app:startDestination="@id/navigation_home">
+
     <fragment
         android:id="@+id/navigation_home"
         android:name="com.camo.app.ui.home.HomeFragment"

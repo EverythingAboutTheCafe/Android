@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">camo-android</string>
+    <string name="label_home_icon">홈</string>
+    <string name="label_timline_icon">타임라인</string>
+    <string name="label_write_icon">기록하기</string>
+    <string name="label_profile_icon">마이</string>
 </resources>
