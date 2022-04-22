@@ -2,21 +2,25 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/main_navigation"
-    app:startDestination="@id/homeFragment">
+    app:startDestination="@id/navigation_home">
     <fragment
-        android:id="@+id/homeFragment"
+        android:id="@+id/navigation_home"
         android:name="com.camo.app.ui.home.HomeFragment"
         android:label="HomeFragment" />
+
     <fragment
-        android:id="@+id/profileFragment"
-        android:name="com.camo.app.ui.profile.ProfileFragment"
-        android:label="ProfileFragment" />
-    <fragment
-        android:id="@+id/timelineFragment"
+        android:id="@+id/navigation_timeline"
         android:name="com.camo.app.ui.timeline.TimelineFragment"
         android:label="TimelineFragment" />
+
     <fragment
-        android:id="@+id/writeFragment"
+        android:id="@+id/navigation_write"
         android:name="com.camo.app.ui.write.WriteFragment"
         android:label="WriteFragment" />
+
+    <fragment
+        android:id="@+id/navigation_profile"
+        android:name="com.camo.app.ui.profile.ProfileFragment"
+        android:label="ProfileFragment" />
+
 </navigation>

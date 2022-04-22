@@ -3,21 +3,21 @@
 
     <item
         android:id="@+id/navigation_home"
-        android:icon="@drawable/selector_home_icon"
+        android:icon="@drawable/ic_home_icon"
         android:title="홈" />
 
     <item
         android:id="@+id/navigation_timeline"
-        android:icon="@drawable/selector_timeline_icon"
+        android:icon="@drawable/ic_timeline_icon"
         android:title="타임라인" />
 
     <item
         android:id="@+id/navigation_write"
-        android:icon="@drawable/selector_write_icon"
+        android:icon="@drawable/ic_write_icon"
         android:title="기록하기" />
 
     <item
         android:id="@+id/navigation_profile"
-        android:icon="@drawable/selector_profile_icon"
+        android:icon="@drawable/ic_profile_icon"
         android:title="마이" />
 </menu>
