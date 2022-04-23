@@ -2,6 +2,7 @@ package com.camo.app
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -12,11 +13,9 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottom_navigation)
-        bottomNavigationView.itemIconTintList = null
 
-        val navController =
-            supportFragmentManager.findFragmentById(R.id.container_main)?.findNavController()
-        navController?.let {
+        val navController = supportFragmentManager.findFragmentById(R.id.container_main)?.findNavController()
+        navController?.let{
             bottomNavigationView.setupWithNavController(it)
         }
     }
