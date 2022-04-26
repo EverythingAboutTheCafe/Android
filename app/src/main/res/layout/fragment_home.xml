@@ -8,12 +8,12 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <fragment
-            android:id="@+id/map"
-            android:name="com.naver.maps.map.MapFragment"
+        <LinearLayout
+            android:id="@+id/map_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginBottom="26dp"/>
+            android:orientation="vertical">
+        </LinearLayout>
 
         <View
             android:id="@+id/home_bottom_sheet"
@@ -21,7 +21,7 @@
             android:layout_height="178dp"
             android:background="@color/black"
             app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior" />
-        
+
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

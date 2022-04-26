@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.camo.app">
 
+    <!-- 위치정보 권한 -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"></uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"></uses-permission>
+    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+    
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -19,8 +25,8 @@
             </intent-filter>
         </activity>
 
-        <!-- 클라이언트 ID 추가 -->
-        <meta-data android:name="com.naver.maps.map.CLIENT_ID" android:value="87qtkhrwig" />
+        <!-- 클라이언트 ID 추가(카카오) -->
+        <meta-data android:name="com.kakao.sdk.AppKey" android:value="c7021ab0bacf949bdc93b81bfe6daba2"/>
     </application>
 
 </manifest>

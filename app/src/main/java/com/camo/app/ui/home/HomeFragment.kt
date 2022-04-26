@@ -14,11 +14,17 @@ class HomeFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        val mapView = MapVie
+        val mapViewContainer = view.findViewById<ViewGroup>(R.id.map_view)
+        mapViewContainer.addView(mapView)
+
         return inflater.inflate(R.layout.fragment_home, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+
 
         val behavior = BottomSheetBehavior.from(view.findViewById(R.id.home_bottom_sheet))
         behavior.peekHeight = 72
