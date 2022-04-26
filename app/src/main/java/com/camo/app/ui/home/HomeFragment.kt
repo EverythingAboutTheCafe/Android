@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.camo.app.R
+import com.google.android.material.bottomsheet.BottomSheetBehavior
 
 class HomeFragment : Fragment() {
     override fun onCreateView(
@@ -18,5 +19,8 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        val behavior = BottomSheetBehavior.from(view.findViewById(R.id.home_bottom_sheet))
+        behavior.peekHeight = 72
     }
 }
