@@ -4,4 +4,6 @@
     <string name="label_timline_icon">타임라인</string>
     <string name="label_write_icon">기록하기</string>
     <string name="label_profile_icon">마이</string>
+    <string name="user_profile_img">유저 프로필 사진</string>
+    <string name="label_timeline">타임라인</string>
 </resources>

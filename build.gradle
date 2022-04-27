@@ -15,6 +15,7 @@ buildscript {
 
 ext {
     navVersion = '2.3.5'
+    glideVersion = '4.12.0'
 }
 
 task clean(type: Delete) {
