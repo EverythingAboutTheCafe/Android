@@ -30,7 +30,7 @@ class TimelineFragment : Fragment() {
 
         val timelineAdapter = TimelineAdapter()
         binding.rvTimeline.adapter = timelineAdapter
-        viewModel.post.observe(viewLifecycleOwner) {
+        viewModel.posts.observe(viewLifecycleOwner) {
             timelineAdapter.submitList(it)
         }
 

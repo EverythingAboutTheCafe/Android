@@ -33,18 +33,21 @@
         <entry key="..\:/Users/user/Desktop/Camo/Android/app/src/main/res/drawable/ic_timeline_icon_orange.xml" value="0.1" />
         <entry key="..\:/Users/user/Desktop/Camo/Android/app/src/main/res/drawable/ic_write_icon_gray.xml" value="0.1" />
         <entry key="..\:/Users/user/Desktop/Camo/Android/app/src/main/res/drawable/ic_write_icon_orange.xml" value="0.1" />
+        <entry key="..\:/Users/user/Desktop/Camo/Android/app/src/main/res/drawable/selected_viewpager_indicator.xml" value="0.1" />
         <entry key="..\:/Users/user/Desktop/Camo/Android/app/src/main/res/drawable/selector_bottom_icon.xml" value="0.1225" />
         <entry key="..\:/Users/user/Desktop/Camo/Android/app/src/main/res/drawable/selector_home_icon.xml" value="0.1" />
         <entry key="..\:/Users/user/Desktop/Camo/Android/app/src/main/res/drawable/selector_profile_icon.xml" value="0.1" />
         <entry key="..\:/Users/user/Desktop/Camo/Android/app/src/main/res/drawable/selector_timeline_icon.xml" value="0.1" />
+        <entry key="..\:/Users/user/Desktop/Camo/Android/app/src/main/res/drawable/selector_viewpager_indicator.xml" value="0.1" />
         <entry key="..\:/Users/user/Desktop/Camo/Android/app/src/main/res/drawable/selector_write_icon.xml" value="0.1" />
+        <entry key="..\:/Users/user/Desktop/Camo/Android/app/src/main/res/drawable/unselected_viewpager_indicator.xml" value="0.1" />
         <entry key="..\:/Users/user/Desktop/Camo/Android/app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="..\:/Users/user/Desktop/Camo/Android/app/src/main/res/layout/fragment_home.xml" value="0.14210526315789473" />
         <entry key="..\:/Users/user/Desktop/Camo/Android/app/src/main/res/layout/fragment_profile.xml" value="0.1125" />
         <entry key="..\:/Users/user/Desktop/Camo/Android/app/src/main/res/layout/fragment_timeline.xml" value="0.264" />
         <entry key="..\:/Users/user/Desktop/Camo/Android/app/src/main/res/layout/fragment_write.xml" value="0.25364583333333335" />
         <entry key="..\:/Users/user/Desktop/Camo/Android/app/src/main/res/layout/item_post_image.xml" value="0.12994350282485875" />
-        <entry key="..\:/Users/user/Desktop/Camo/Android/app/src/main/res/layout/item_timeline.xml" value="0.264" />
+        <entry key="..\:/Users/user/Desktop/Camo/Android/app/src/main/res/layout/item_timeline.xml" value="0.2" />
         <entry key="..\:/Users/user/Desktop/Camo/Android/app/src/main/res/menu/main_menu.xml" value="0.1" />
       </map>
     </option>

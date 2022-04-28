@@ -10,7 +10,10 @@ import com.camo.app.repository.TimelineRepository
 class TimelineViewModel(private val timelineRepository: TimelineRepository) : ViewModel() {
 
     private val _posts = MutableLiveData<List<Post>>()
-    val post: LiveData<List<Post>> = _posts
+    val posts: LiveData<List<Post>> = _posts
+
+    private val _images = MutableLiveData<List<Images>>()
+    val images: LiveData<List<Images>> = _images
 
     init {
         loadTimelineData()
@@ -20,6 +23,7 @@ class TimelineViewModel(private val timelineRepository: TimelineRepository) : Vi
         val timelineData = timelineRepository.getTimeline()
         timelineData?.let { timelineData ->
             _posts.value = timelineData.posts
+            _images.value = timelineData.posts[0].postImages
         }
     }
 }

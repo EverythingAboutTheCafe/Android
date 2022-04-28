@@ -7,8 +7,11 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.camo.app.databinding.ItemTimelineBinding
 import com.camo.app.model.Post
+import com.google.android.material.tabs.TabLayoutMediator
 
 class TimelineAdapter : ListAdapter<Post, TimelineAdapter.TimelineViewHolder>(TimelineDiffCallback()) {
+
+    lateinit var items: ArrayList<Post>
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TimelineViewHolder {
         val binding = ItemTimelineBinding.inflate(LayoutInflater.from(parent.context), parent, false)
@@ -23,6 +26,13 @@ class TimelineAdapter : ListAdapter<Post, TimelineAdapter.TimelineViewHolder>(Ti
     class TimelineViewHolder(private val binding: ItemTimelineBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(post: Post) {
             binding.post = post
+            with(binding.viewpagerTimelineImage) {
+                adapter = TimeLinePostImageAdapter().build(post.postImages)
+                TabLayoutMediator(binding.viewpagerTimelineImageIndicator, this) { tab, position ->
+
+                }.attach()
+
+            }
             binding.executePendingBindings()
         }
     }
