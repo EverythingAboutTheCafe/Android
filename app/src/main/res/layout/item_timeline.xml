@@ -49,7 +49,7 @@
             app:layout_constraintTop_toBottomOf="@+id/tv_user_name"
             tools:text="2시간 전" />
 
-        <ImageView
+        <androidx.viewpager2.widget.ViewPager2
             android:id="@+id/viewpager_timeline_image"
             android:layout_width="match_parent"
             android:layout_height="0dp"
@@ -59,6 +59,16 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/iv_timeline_user_profile" />
 
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/viewpager_timeline_image_indicator"
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            app:layout_constraintBottom_toBottomOf="@+id/viewpager_timeline_image"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:tabGravity="center"
+            app:tabIndicatorHeight="0dp" />
+
 
         <TextView
             android:id="@+id/tv_post_label"
@@ -66,13 +76,14 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="13dp"
             android:layout_marginEnd="13dp"
+            android:layout_marginTop="10dp"
             android:textSize="16sp"
             android:maxLines="2"
             android:ellipsize="end"
             android:text="@{post.content.label}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/viewpager_timeline_image"
+            app:layout_constraintTop_toBottomOf="@+id/viewpager_timeline_image_indicator"
             tools:text="블루라떼가 맛있었다. 자리마다 콘센트 있어서 작업하기 좋음" />
 
         <TextView
@@ -156,10 +167,11 @@
 
         <ImageView
             android:id="@+id/iv_cafe_like"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:src="@drawable/ic_like_off_icon"
             android:layout_marginEnd="20dp"
+            android:scaleType="centerCrop"
             isLike="@{post.cafe.cafeLike}"
             app:layout_constraintBottom_toBottomOf="@id/bg_cafe_info"
             app:layout_constraintTop_toTopOf="@id/bg_cafe_info"

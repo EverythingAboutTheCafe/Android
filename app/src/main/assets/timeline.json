@@ -4,7 +4,7 @@
       "post_id": 1,
       "title": {
         "user_name": "ARIA",
-        "user_profile_image": "https://user-images.githubusercontent.com/50870417/165479353-c716daee-d0a7-4467-9d64-623ac357546c.jpg",
+        "user_profile_image_url": "https://user-images.githubusercontent.com/50870417/165566974-43bd5193-73db-4901-9aa4-20204da84e62.jpg",
         "upload_time": "2시간 전"
       },
       "post_images": [
@@ -31,7 +31,7 @@
       "title": {
         "user_name": "s-ryuri",
         "upload_time": "4월 14일",
-        "user_profile_image": "https://user-images.githubusercontent.com/50870417/165479353-c716daee-d0a7-4467-9d64-623ac357546c.jpg"
+        "user_profile_image_url": "https://user-images.githubusercontent.com/50870417/165566993-2885e9f8-e40b-49ae-a001-fc700904217e.jpg"
       },
       "post_images": [
         {
@@ -56,6 +56,32 @@
       "post_id": 3,
       "title": {
         "user_name": "suee97",
+        "upload_time": "4월 10일",
+        "user_profile_image_url": "https://user-images.githubusercontent.com/50870417/165479353-c716daee-d0a7-4467-9d64-623ac357546c.jpg"
+      },
+      "post_images": [
+        {
+          "post_image_url": "https://user-images.githubusercontent.com/50870417/165479348-5da3a10d-7a02-4bc2-b467-184349e0eb1c.jpg"
+        },
+        {
+          "post_image_url": "https://user-images.githubusercontent.com/50870417/165479345-bddd484d-074b-4c39-b064-76f53be01413.jpg"
+        }
+      ],
+      "content": {
+        "label": "여기 에스프레소 맛집",
+        "visit_time": "평일 오후 5시",
+        "congestion": "3"
+      },
+      "cafe": {
+        "cafe_name": "리아트커피바",
+        "cafe_address": "서울 노원구 동일로 192길 62 3층 리아트커피바",
+        "cafe_like": false
+      }
+    },
+    {
+      "post_id": 4,
+      "title": {
+        "user_name": "suuu_bin24",
         "upload_time": "4월 10일",
         "user_profile_image_url": "https://user-images.githubusercontent.com/50870417/165479353-c716daee-d0a7-4467-9d64-623ac357546c.jpg"
       },

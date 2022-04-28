@@ -15,6 +15,7 @@ class TimelineAdapter : ListAdapter<Post, TimelineAdapter.TimelineViewHolder>(Ti
         return TimelineViewHolder(binding)
     }
 
+
     override fun onBindViewHolder(holder: TimelineViewHolder, position: Int) {
         holder.bind(getItem(position))
     }
@@ -28,6 +29,7 @@ class TimelineAdapter : ListAdapter<Post, TimelineAdapter.TimelineViewHolder>(Ti
 }
 
 class TimelineDiffCallback : DiffUtil.ItemCallback<Post>() {
+
     override fun areItemsTheSame(oldItem: Post, newItem: Post): Boolean {
         return oldItem.postId == newItem.postId
     }
