@@ -3,19 +3,15 @@ package com.camo.app
 import android.content.Context
 import android.content.pm.PackageManager
 import android.location.LocationManager
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.view.ViewGroup
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
-import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import net.daum.mf.map.api.MapPOIItem
-import net.daum.mf.map.api.MapView
 
 class MainActivity : AppCompatActivity() {
   
@@ -26,7 +22,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         
         // 바텀바 + 네비게이션
-
         val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottom_navigation)
         val navController =
             supportFragmentManager.findFragmentById(R.id.container_main)?.findNavController()
