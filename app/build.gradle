@@ -27,8 +27,14 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
     kotlinOptions {
         jvmTarget = '1.8'
+    }
+
+    // 데이터 바인딩 사용
+    dataBinding {
+        enabled = true
     }
 }
 
@@ -50,4 +56,7 @@ dependencies {
 
     // fragment
     implementation "androidx.fragment:fragment-ktx:1.4.1"
+
+    // map api 라이브러리 적용
+    implementation files('libs/libDaumMapAndroid.jar')
 }
