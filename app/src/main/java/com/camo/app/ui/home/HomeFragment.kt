@@ -1,5 +1,10 @@
 package com.camo.app.ui.home
 
+
+import android.Manifest
+import android.location.Location
+import android.os.Bundle
+import android.os.Looper
 import android.annotation.SuppressLint
 import android.content.Context
 import android.location.Location
@@ -9,6 +14,8 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.result.contract.ActivityResultContracts
+import androidx.annotation.UiThread
 import androidx.fragment.app.Fragment
 import com.camo.app.R
 import com.camo.app.databinding.FragmentHomeBinding
@@ -77,5 +84,6 @@ class HomeFragment : Fragment() {
         userPosMarker.setCustomImageAnchor(0.5f, 0.5f)
         userPosMarker.selectedMarkerType = MapPOIItem.MarkerType.RedPin
         mapView.addPOIItem(userPosMarker)
+
     }
 }

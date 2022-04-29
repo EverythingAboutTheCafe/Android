@@ -18,14 +18,15 @@ import net.daum.mf.map.api.MapPOIItem
 import net.daum.mf.map.api.MapView
 
 class MainActivity : AppCompatActivity() {
-
+  
     private val PERMISSION_REQUEST_CODE = 100
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
+        
         // 바텀바 + 네비게이션
+
         val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottom_navigation)
         val navController =
             supportFragmentManager.findFragmentById(R.id.container_main)?.findNavController()

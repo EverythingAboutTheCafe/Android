@@ -1,0 +1,108 @@
+{
+  "posts":[
+    {
+      "post_id": 1,
+      "title": {
+        "user_name": "ARIA",
+        "user_profile_image_url": "https://user-images.githubusercontent.com/50870417/165566974-43bd5193-73db-4901-9aa4-20204da84e62.jpg",
+        "upload_time": "2시간 전"
+      },
+      "post_images": [
+        {
+          "post_image_url": "https://user-images.githubusercontent.com/50870417/165479349-424c60fb-3780-4786-828c-6b66d66de7de.jpg"
+        },
+        {
+          "post_image_url": "https://user-images.githubusercontent.com/50870417/165479340-3851d248-cb0c-426e-afac-8d1d63428159.jpg"
+        }
+      ],
+      "content": {
+        "label": "크림브륄레가 맛있었다. 얼그레이 카눌레도 맛있음",
+        "visit_time": "평일 오후 4시",
+        "congestion": "1"
+      },
+      "cafe": {
+        "cafe_name": "샹드마르스",
+        "cafe_address": "서울 노원구 공릉로 37길 23 4층,5층, 루프탑",
+        "cafe_like": true
+      }
+    },
+    {
+      "post_id": 2,
+      "title": {
+        "user_name": "s-ryuri",
+        "upload_time": "4월 14일",
+        "user_profile_image_url": "https://user-images.githubusercontent.com/50870417/165566993-2885e9f8-e40b-49ae-a001-fc700904217e.jpg"
+      },
+      "post_images": [
+        {
+          "post_image_url": "https://user-images.githubusercontent.com/50870417/165479336-1a212f08-0c76-42ab-8566-1b110b06ca59.jpg"
+        },
+        {
+          "post_image_url": "https://user-images.githubusercontent.com/50870417/165479331-735fc1ff-4edd-42bd-bae5-02a7c2f50777.jpg"
+        }
+      ],
+      "content": {
+        "label": "파이 보러갑니다. 밀크티가 맛있고 디저트가 매일 바뀌니 인스타그램을 확인하세요!",
+        "visit_time": "평일 오후 2시",
+        "congestion": "2"
+      },
+      "cafe": {
+        "cafe_name": "원주율",
+        "cafe_address": "서울 노원구 동일로178길 59-25 1층 2호",
+        "cafe_like": false
+      }
+    },
+    {
+      "post_id": 3,
+      "title": {
+        "user_name": "suee97",
+        "upload_time": "4월 10일",
+        "user_profile_image_url": "https://user-images.githubusercontent.com/50870417/165479353-c716daee-d0a7-4467-9d64-623ac357546c.jpg"
+      },
+      "post_images": [
+        {
+          "post_image_url": "https://user-images.githubusercontent.com/50870417/165479348-5da3a10d-7a02-4bc2-b467-184349e0eb1c.jpg"
+        },
+        {
+          "post_image_url": "https://user-images.githubusercontent.com/50870417/165479345-bddd484d-074b-4c39-b064-76f53be01413.jpg"
+        }
+      ],
+      "content": {
+        "label": "여기 에스프레소 맛집",
+        "visit_time": "평일 오후 5시",
+        "congestion": "3"
+      },
+      "cafe": {
+        "cafe_name": "리아트커피바",
+        "cafe_address": "서울 노원구 동일로 192길 62 3층 리아트커피바",
+        "cafe_like": false
+      }
+    },
+    {
+      "post_id": 4,
+      "title": {
+        "user_name": "suuu_bin24",
+        "upload_time": "4월 10일",
+        "user_profile_image_url": "https://user-images.githubusercontent.com/50870417/165479353-c716daee-d0a7-4467-9d64-623ac357546c.jpg"
+      },
+      "post_images": [
+        {
+          "post_image_url": "https://user-images.githubusercontent.com/50870417/165479348-5da3a10d-7a02-4bc2-b467-184349e0eb1c.jpg"
+        },
+        {
+          "post_image_url": "https://user-images.githubusercontent.com/50870417/165479345-bddd484d-074b-4c39-b064-76f53be01413.jpg"
+        }
+      ],
+      "content": {
+        "label": "여기 에스프레소 맛집",
+        "visit_time": "평일 오후 5시",
+        "congestion": "3"
+      },
+      "cafe": {
+        "cafe_name": "리아트커피바",
+        "cafe_address": "서울 노원구 동일로 192길 62 3층 리아트커피바",
+        "cafe_like": false
+      }
+    }
+  ]
+}
