@@ -68,7 +68,7 @@ class HomeFragment : Fragment() {
 
         // 마커 표시 (파란색)
         val userPosMarker = MapPOIItem()
-        userPosMarker.itemName = "내 위치"
+        userPosMarker.itemName = "현 위치"
         userPosMarker.tag = 1
         userPosMarker.mapPoint = userPosition
         userPosMarker.markerType = MapPOIItem.MarkerType.CustomImage
