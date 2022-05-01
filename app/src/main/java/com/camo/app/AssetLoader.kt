@@ -2,13 +2,7 @@ package com.camo.app
 
 import android.content.Context
 
-class AssetLoader(private val context:Context){
-
-    fun getJsonString(fileName: String): String? {
-        return kotlin.runCatching {
-            loadAsset(fileName)
-        }.getOrNull()
-    }
+class AssetLoader (private val context: Context) {
 
     private fun loadAsset(fileName: String): String {
         return context.assets.open(fileName).use { inputStream ->
@@ -18,4 +12,11 @@ class AssetLoader(private val context:Context){
             String(bytes)
         }
     }
+
+    fun getJsonString(fileName: String): String? {
+        return kotlin.runCatching {
+            loadAsset(fileName)
+        }.getOrNull()
+    }
+
 }

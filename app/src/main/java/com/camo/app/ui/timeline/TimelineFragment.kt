@@ -7,12 +7,13 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.camo.app.databinding.FragmentTimelineBinding
-import com.camo.app.ui.ViewModelFactory
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class TimelineFragment : Fragment() {
 
     private lateinit var binding : FragmentTimelineBinding
-    private val viewModel : TimelineViewModel by viewModels { ViewModelFactory(requireContext()) }
+    private val viewModel : TimelineViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -33,7 +34,6 @@ class TimelineFragment : Fragment() {
         viewModel.posts.observe(viewLifecycleOwner) {
             timelineAdapter.submitList(it)
         }
-
 
     }
 }
