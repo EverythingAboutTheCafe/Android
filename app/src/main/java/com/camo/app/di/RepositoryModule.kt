@@ -1,6 +1,7 @@
 package com.camo.app.di
 
 import android.content.Context
+import com.camo.app.repository.HomeRepository
 import com.camo.app.repository.TimelineRepository
 import dagger.Module
 import dagger.Provides
@@ -19,6 +20,12 @@ object RepositoryModule {
         @ApplicationContext context: Context
     ): TimelineRepository {
         return TimelineRepository(context)
+    }
+
+    @Singleton
+    @Provides
+    fun provideHomeRepository(): HomeRepository {
+        return HomeRepository()
     }
 
 }

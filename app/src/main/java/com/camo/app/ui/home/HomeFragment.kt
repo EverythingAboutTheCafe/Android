@@ -25,6 +25,7 @@ import net.daum.mf.map.api.MapView
 class HomeFragment : Fragment() {
     private lateinit var binding: FragmentHomeBinding
     private lateinit var locationManager: LocationManager
+    private val viewModel : HomeViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,
