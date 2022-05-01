@@ -11,13 +11,17 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import com.camo.app.R
 import com.camo.app.databinding.FragmentHomeBinding
+import com.camo.app.ui.timeline.TimelineViewModel
 import com.google.android.material.bottomsheet.BottomSheetBehavior
+import dagger.hilt.android.AndroidEntryPoint
 import net.daum.mf.map.api.MapPOIItem
 import net.daum.mf.map.api.MapPoint
 import net.daum.mf.map.api.MapView
 
+@AndroidEntryPoint
 class HomeFragment : Fragment() {
     private lateinit var binding: FragmentHomeBinding
     private lateinit var locationManager: LocationManager
@@ -44,7 +48,7 @@ class HomeFragment : Fragment() {
         val behavior = BottomSheetBehavior.from(binding.homeBottomSheet)
         behavior.peekHeight = 72
 
-        val mapView = MapView(context)
+        val mapView = MapView(activity)
         val mapViewContainer = view.findViewById<ViewGroup>(R.id.map_view)
         mapViewContainer.addView(mapView)
 
