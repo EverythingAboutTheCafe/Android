@@ -3,6 +3,7 @@ package com.camo.app.ui.home
 
 import android.annotation.SuppressLint
 import android.content.Context
+import android.graphics.Color
 import android.location.Location
 import android.location.LocationManager
 import android.os.Bundle
@@ -12,11 +13,13 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.Observer
 import com.camo.app.R
 import com.camo.app.databinding.FragmentHomeBinding
 import com.camo.app.ui.timeline.TimelineViewModel
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import dagger.hilt.android.AndroidEntryPoint
+import net.daum.mf.map.api.MapCircle
 import net.daum.mf.map.api.MapPOIItem
 import net.daum.mf.map.api.MapPoint
 import net.daum.mf.map.api.MapView
@@ -25,15 +28,17 @@ import net.daum.mf.map.api.MapView
 class HomeFragment : Fragment() {
     private lateinit var binding: FragmentHomeBinding
     private lateinit var locationManager: LocationManager
-    private val viewModel : HomeViewModel by viewModels()
+    private val viewModel: HomeViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
         binding = FragmentHomeBinding.inflate(inflater, container, false)
         return binding.root
+
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -62,16 +67,18 @@ class HomeFragment : Fragment() {
 
         // 위치 정보
         Log.d("suee97", "startTracking() function called")
-        val userLocation: Location? = locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER)
+        val userLocation: Location? =
+            locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER)
         val userLatitude = userLocation?.latitude // 위도
         val userLongitude = userLocation?.longitude // 경도
         val userPosition = MapPoint.mapPointWithGeoCoord(userLatitude!!, userLongitude!!)
         Log.d("suee97", "User Location : 위도(${userLatitude})  경도(${userLongitude})")
 
-        // 중심 변경
+        // 중심, 줌레벨 변경
         mapView.setMapCenterPoint(userPosition, true)
+        mapView.setZoomLevelFloat(3.5f, true)
 
-        // 마커 표시 (파란색)
+        // 사용자 위치 마커 표시
         val userPosMarker = MapPOIItem()
         userPosMarker.itemName = "현 위치"
         userPosMarker.tag = 1
@@ -83,6 +90,35 @@ class HomeFragment : Fragment() {
         userPosMarker.setCustomImageAnchor(0.5f, 0.5f)
         userPosMarker.selectedMarkerType = MapPOIItem.MarkerType.RedPin
         mapView.addPOIItem(userPosMarker)
+
+        // 사용자 기준 반경 1km 표시
+        val circle = MapCircle(
+            MapPoint.mapPointWithGeoCoord(userLatitude, userLongitude),
+            1000,
+            Color.argb(128, 255, 0, 0),
+            Color.argb(128, 0, 255, 0)
+        )
+        circle.tag = 1234
+        mapView.addCircle(circle)
+
+        // 주변 카페 불러오기 + 표시
+        viewModel.getNearbyCafes("1000", userLongitude.toString(), userLatitude.toString(), 1)
+        viewModel.nearbyCafes.observe(this, Observer { res ->
+            if (res.isSuccessful) {
+                res.body()?.cafeInfos?.forEach {
+                    val tempMarker = MapPOIItem()
+                    tempMarker.itemName = it.place_name
+                    tempMarker.tag = 0
+                    tempMarker.mapPoint =
+                        MapPoint.mapPointWithGeoCoord(it.y.toDouble(), it.x.toDouble())
+                    tempMarker.markerType = MapPOIItem.MarkerType.BluePin
+                    tempMarker.selectedMarkerType = MapPOIItem.MarkerType.BluePin
+                    mapView.addPOIItem(tempMarker)
+                }
+            } else {
+                // TODO Response 가 Successful 하지 않을 때의 처리
+            }
+        })
 
     }
 }
