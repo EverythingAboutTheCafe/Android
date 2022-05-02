@@ -77,10 +77,10 @@
 
         <TextView
             android:id="@+id/tv_post_label"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="13dp"
-            android:layout_marginEnd="13dp"
+            android:paddingStart="13dp"
+            android:paddingEnd="13dp"
             android:layout_marginTop="20dp"
             android:textSize="16sp"
             android:maxLines="2"
@@ -95,7 +95,8 @@
             android:id="@+id/tv_visiting_time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="15dp"
             style="@style/InfoText"
             app:layout_constraintStart_toStartOf="@+id/tv_post_label"
             app:layout_constraintTop_toBottomOf="@+id/tv_post_label"
@@ -182,9 +183,8 @@
 
         <View
             android:layout_width="match_parent"
-            android:layout_height="1dp"
+            style="@style/Divider"
             android:layout_marginTop="18dp"
-            android:background="#F6F6F6"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"

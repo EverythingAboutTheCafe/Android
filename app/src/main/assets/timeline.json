@@ -18,7 +18,7 @@
       "content": {
         "label": "크림브륄레가 맛있었다. 얼그레이 카눌레도 맛있음",
         "visit_time": "평일 오후 4시",
-        "congestion": "1"
+        "congestion": "2"
       },
       "cafe": {
         "cafe_name": "샹드마르스",
@@ -44,7 +44,7 @@
       "content": {
         "label": "파이 보러갑니다. 밀크티가 맛있고 디저트가 매일 바뀌니 인스타그램을 확인하세요!",
         "visit_time": "평일 오후 2시",
-        "congestion": "2"
+        "congestion": "4"
       },
       "cafe": {
         "cafe_name": "원주율",
@@ -70,7 +70,7 @@
       "content": {
         "label": "여기 에스프레소 맛집",
         "visit_time": "평일 오후 5시",
-        "congestion": "3"
+        "congestion": "1"
       },
       "cafe": {
         "cafe_name": "리아트커피바",
@@ -83,24 +83,24 @@
       "title": {
         "user_name": "suuu_bin24",
         "upload_time": "4월 10일",
-        "user_profile_image_url": "https://user-images.githubusercontent.com/50870417/165479353-c716daee-d0a7-4467-9d64-623ac357546c.jpg"
+        "user_profile_image_url": "https://user-images.githubusercontent.com/50870417/166285724-881edefb-0436-40bc-b857-ee24f77ccd27.jpg"
       },
       "post_images": [
         {
-          "post_image_url": "https://user-images.githubusercontent.com/50870417/165479348-5da3a10d-7a02-4bc2-b467-184349e0eb1c.jpg"
+          "post_image_url": "https://user-images.githubusercontent.com/50870417/166285367-2265c391-4dbf-4a9e-a150-d00249b21852.jpg"
         },
         {
-          "post_image_url": "https://user-images.githubusercontent.com/50870417/165479345-bddd484d-074b-4c39-b064-76f53be01413.jpg"
+          "post_image_url": "https://user-images.githubusercontent.com/50870417/166285413-c8e03ef6-fca3-496c-b336-5c9438d4c370.jpg"
         }
       ],
       "content": {
-        "label": "여기 에스프레소 맛집",
+        "label": "커피맛집, 좌석이 많지 않지만 아늑하고 좋은 곳. 커피가 기본 쓰리샷입니다.",
         "visit_time": "평일 오후 5시",
         "congestion": "3"
       },
       "cafe": {
-        "cafe_name": "리아트커피바",
-        "cafe_address": "서울 노원구 동일로 192길 62 3층 리아트커피바",
+        "cafe_name": "표준커피",
+        "cafe_address": "서울 노원구 공릉로 119-5",
         "cafe_like": false
       }
     }

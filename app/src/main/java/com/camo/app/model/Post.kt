@@ -17,7 +17,7 @@ data class Title (
 )
 
 data class Images (
-    @SerializedName("post_image_url") val postImageUrl: String
+    @SerializedName("post_image_url") var postImageUrl: String
 )
 
 data class Content (
