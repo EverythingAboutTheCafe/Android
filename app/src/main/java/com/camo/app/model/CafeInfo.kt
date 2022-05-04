@@ -24,7 +24,7 @@ data class CafeInfoUnit(
 
 data class CafeMeta(
     val is_end: Boolean,
-    val pageable: Int,
+    val pageable_count: Int,
     val same_name: RegionInfo?,
     val total_count: Int
 )

@@ -16,7 +16,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import com.camo.app.R
 import com.camo.app.databinding.FragmentHomeBinding
-import com.camo.app.ui.timeline.TimelineViewModel
+import com.camo.app.utils.Constants.Companion.SMALL_RADIUS
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import dagger.hilt.android.AndroidEntryPoint
 import net.daum.mf.map.api.MapCircle
@@ -35,6 +35,7 @@ class HomeFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        viewModel.initializeCafeList()
 
         binding = FragmentHomeBinding.inflate(inflater, container, false)
         return binding.root
@@ -66,7 +67,6 @@ class HomeFragment : Fragment() {
     private fun initializeMap(mapView: MapView) {
 
         // 위치 정보
-        Log.d("suee97", "startTracking() function called")
         val userLocation: Location? =
             locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER)
         val userLatitude = userLocation?.latitude // 위도
@@ -76,7 +76,7 @@ class HomeFragment : Fragment() {
 
         // 중심, 줌레벨 변경
         mapView.setMapCenterPoint(userPosition, true)
-        mapView.setZoomLevelFloat(3.5f, true)
+        mapView.setZoomLevelFloat(2.5f, true)
 
         // 사용자 위치 마커 표시
         val userPosMarker = MapPOIItem()
@@ -91,10 +91,10 @@ class HomeFragment : Fragment() {
         userPosMarker.selectedMarkerType = MapPOIItem.MarkerType.RedPin
         mapView.addPOIItem(userPosMarker)
 
-        // 사용자 기준 반경 1km 표시
+        // 사용자 기준 반경 500m 표시
         val circle = MapCircle(
             MapPoint.mapPointWithGeoCoord(userLatitude, userLongitude),
-            1000,
+            SMALL_RADIUS,
             Color.argb(128, 255, 0, 0),
             Color.argb(128, 0, 255, 0)
         )
@@ -102,21 +102,17 @@ class HomeFragment : Fragment() {
         mapView.addCircle(circle)
 
         // 주변 카페 불러오기 + 표시
-        viewModel.getNearbyCafes("1000", userLongitude.toString(), userLatitude.toString(), 1)
-        viewModel.nearbyCafes.observe(this, Observer { res ->
-            if (res.isSuccessful) {
-                res.body()?.cafeInfos?.forEach {
-                    val tempMarker = MapPOIItem()
-                    tempMarker.itemName = it.place_name
-                    tempMarker.tag = 0
-                    tempMarker.mapPoint =
-                        MapPoint.mapPointWithGeoCoord(it.y.toDouble(), it.x.toDouble())
-                    tempMarker.markerType = MapPOIItem.MarkerType.BluePin
-                    tempMarker.selectedMarkerType = MapPOIItem.MarkerType.BluePin
-                    mapView.addPOIItem(tempMarker)
-                }
-            } else {
-                // TODO Response 가 Successful 하지 않을 때의 처리
+        viewModel.getAllNearbyCafe(SMALL_RADIUS.toString(), userLongitude.toString(), userLatitude.toString())
+        viewModel.cafeList.observe(this, Observer { res ->
+            res.forEach {
+                val tempMarker = MapPOIItem()
+                tempMarker.itemName = it.place_name
+                tempMarker.tag = 0
+                tempMarker.mapPoint =
+                    MapPoint.mapPointWithGeoCoord(it.y.toDouble(), it.x.toDouble())
+                tempMarker.markerType = MapPOIItem.MarkerType.BluePin
+                tempMarker.selectedMarkerType = MapPOIItem.MarkerType.BluePin
+                mapView.addPOIItem(tempMarker)
             }
         })
 

@@ -26,7 +26,8 @@ object RepositoryModule {
     @Singleton
     @Provides
     fun provideHomeRepository(
-        kakaoApi: KakaoApi
+        kakaoApi: KakaoApi,
+        @ApplicationContext context: Context
     ): HomeRepository {
         return HomeRepository(kakaoApi)
     }

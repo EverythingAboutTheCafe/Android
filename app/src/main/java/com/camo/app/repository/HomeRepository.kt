@@ -10,12 +10,7 @@ class HomeRepository @Inject constructor(
     private val kakaoApi: KakaoApi
 ) {
 
-    suspend fun getNearbyCafes(
-        radius: String,
-        x: String,
-        y: String,
-        page: Int
-    ): Response<CafeInfo> {
+    suspend fun getNearbyCafes(radius: String, x: String, y: String, page: Int): Response<CafeInfo> {
         return kakaoApi.getKakaoCafe(CAFE_CODE, radius, x, y, page)
     }
 
