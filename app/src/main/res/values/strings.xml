@@ -1,9 +1,16 @@
 <resources>
     <string name="app_name">camo-android</string>
     <string name="label_home_icon">홈</string>
-    <string name="label_timline_icon">타임라인</string>
+    <string name="label_timeline_icon">타임라인</string>
     <string name="label_write_icon">기록하기</string>
     <string name="label_profile_icon">마이</string>
     <string name="user_profile_img">유저 프로필 사진</string>
     <string name="label_timeline">타임라인</string>
+    <string name="label_cancel">취소</string>
+    <string name="label_write">기록하기</string>
+    <string name="label_edittext">당신의 경험을 들려주세요.</string>
+    <string name="congestion_very_good">널널함</string>
+    <string name="congestion_so_so">보통</string>
+    <string name="congestion_bad">다소 혼잡</string>
+    <string name="congestion_very_bad">매우 혼잡</string>
 </resources>
