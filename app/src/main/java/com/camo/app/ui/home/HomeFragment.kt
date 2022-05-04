@@ -66,6 +66,10 @@ class HomeFragment : Fragment() {
     @SuppressLint("MissingPermission")
     private fun initializeMap(mapView: MapView) {
 
+        // Clear map
+        mapView.removeAllCircles()
+        mapView.removeAllPOIItems()
+
         // 위치 정보
         val userLocation: Location? =
             locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER)
@@ -76,7 +80,7 @@ class HomeFragment : Fragment() {
 
         // 중심, 줌레벨 변경
         mapView.setMapCenterPoint(userPosition, true)
-        mapView.setZoomLevelFloat(2.5f, true)
+        mapView.setZoomLevelFloat(2.0f, true)
 
         // 사용자 위치 마커 표시
         val userPosMarker = MapPOIItem()
@@ -86,12 +90,10 @@ class HomeFragment : Fragment() {
         userPosMarker.markerType = MapPOIItem.MarkerType.CustomImage
         userPosMarker.customImageResourceId = R.drawable.map_marker // 벡터 이미지 지원x
         userPosMarker.isCustomImageAutoscale = false
-
         userPosMarker.setCustomImageAnchor(0.5f, 0.5f)
-        userPosMarker.selectedMarkerType = MapPOIItem.MarkerType.RedPin
         mapView.addPOIItem(userPosMarker)
 
-        // 사용자 기준 반경 500m 표시
+        // 사용자 기준 반경 300m 표시
         val circle = MapCircle(
             MapPoint.mapPointWithGeoCoord(userLatitude, userLongitude),
             SMALL_RADIUS,
@@ -110,8 +112,9 @@ class HomeFragment : Fragment() {
                 tempMarker.tag = 0
                 tempMarker.mapPoint =
                     MapPoint.mapPointWithGeoCoord(it.y.toDouble(), it.x.toDouble())
-                tempMarker.markerType = MapPOIItem.MarkerType.BluePin
-                tempMarker.selectedMarkerType = MapPOIItem.MarkerType.BluePin
+                tempMarker.markerType = MapPOIItem.MarkerType.CustomImage
+                tempMarker.customImageResourceId = R.drawable.map_cafe_icon
+                tempMarker.isCustomImageAutoscale = false
                 mapView.addPOIItem(tempMarker)
             }
         })
