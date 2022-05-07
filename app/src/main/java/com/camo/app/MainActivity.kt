@@ -2,9 +2,13 @@ package com.camo.app
 
 import android.content.Context
 import android.content.pm.PackageManager
+import android.graphics.Color
 import android.location.LocationManager
+import android.os.Build
 import android.os.Bundle
 import android.util.Log
+import android.view.View
+import android.view.WindowManager
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
@@ -16,13 +20,13 @@ import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
-  
+
     private val PERMISSION_REQUEST_CODE = 100
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        
+
         // 바텀바 + 네비게이션
         val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottom_navigation)
         val navController =
@@ -32,7 +36,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         // GPS 확인
-        if(checkLocationService()) {
+        if (checkLocationService()) {
             checkPermission()
         } else {
             Toast.makeText(this, "GPS 꺼져있음. 켜주세요~", Toast.LENGTH_SHORT).show()
@@ -47,7 +51,7 @@ class MainActivity : AppCompatActivity() {
     ) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
 
-        if(requestCode == PERMISSION_REQUEST_CODE) {
+        if (requestCode == PERMISSION_REQUEST_CODE) {
             Log.d("suee97", "onRequestPermissionResult function called")
         }
     }
@@ -86,4 +90,5 @@ class MainActivity : AppCompatActivity() {
         )
         return lm.isProviderEnabled(LocationManager.GPS_PROVIDER)
     }
+
 }

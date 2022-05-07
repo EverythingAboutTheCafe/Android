@@ -6,11 +6,13 @@ import android.content.Context
 import android.graphics.Color
 import android.location.Location
 import android.location.LocationManager
+import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.WindowManager
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
@@ -37,8 +39,9 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         viewModel.initializeCafeList()
-
         binding = FragmentHomeBinding.inflate(inflater, container, false)
+        binding.viewModel = viewModel
+
         return binding.root
 
     }
@@ -60,10 +63,12 @@ class HomeFragment : Fragment() {
         val mapViewContainer = view.findViewById<ViewGroup>(R.id.map_view)
         mapViewContainer.addView(mapView)
 
+        // 클릭이벤트 추가
         mapView.setPOIItemEventListener(eventListener)
 
         // 맵 띄우기
         initializeMap(mapView)
+
     }
 
     @SuppressLint("MissingPermission")
@@ -119,7 +124,6 @@ class HomeFragment : Fragment() {
                 tempMarker.customImageResourceId = R.drawable.map_cafe_icon
                 tempMarker.isCustomImageAutoscale = false
                 mapView.addPOIItem(tempMarker)
-
             }
         })
 
