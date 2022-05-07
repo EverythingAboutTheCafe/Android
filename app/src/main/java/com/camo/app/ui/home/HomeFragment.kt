@@ -29,6 +29,7 @@ class HomeFragment : Fragment() {
     private lateinit var binding: FragmentHomeBinding
     private lateinit var locationManager: LocationManager
     private val viewModel: HomeViewModel by viewModels()
+    private val eventListener = OnMarkerClicked()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -59,6 +60,8 @@ class HomeFragment : Fragment() {
         val mapViewContainer = view.findViewById<ViewGroup>(R.id.map_view)
         mapViewContainer.addView(mapView)
 
+        mapView.setPOIItemEventListener(eventListener)
+
         // 맵 띄우기
         initializeMap(mapView)
     }
@@ -80,7 +83,7 @@ class HomeFragment : Fragment() {
 
         // 중심, 줌레벨 변경
         mapView.setMapCenterPoint(userPosition, true)
-        mapView.setZoomLevelFloat(2.0f, true)
+        mapView.setZoomLevelFloat(1.8f, true)
 
         // 사용자 위치 마커 표시
         val userPosMarker = MapPOIItem()
@@ -97,8 +100,8 @@ class HomeFragment : Fragment() {
         val circle = MapCircle(
             MapPoint.mapPointWithGeoCoord(userLatitude, userLongitude),
             SMALL_RADIUS,
-            Color.argb(128, 255, 0, 0),
-            Color.argb(128, 0, 255, 0)
+            Color.argb(255, 0, 0, 0), // stroke
+            Color.argb(0, 0, 0, 0) // inner
         )
         circle.tag = 1234
         mapView.addCircle(circle)
@@ -116,8 +119,33 @@ class HomeFragment : Fragment() {
                 tempMarker.customImageResourceId = R.drawable.map_cafe_icon
                 tempMarker.isCustomImageAutoscale = false
                 mapView.addPOIItem(tempMarker)
+
             }
         })
 
     }
+}
+
+// 마커 클릭 이벤트
+class OnMarkerClicked() : MapView.POIItemEventListener {
+    override fun onPOIItemSelected(p0: MapView?, p1: MapPOIItem?) {
+        Log.d("suee97", "아이템 클릭 : ${p1?.itemName}")
+    }
+
+    override fun onCalloutBalloonOfPOIItemTouched(p0: MapView?, p1: MapPOIItem?) {
+        Log.d("suee97", "말풍선 클릭 : ${p1?.itemName}")
+    }
+
+    override fun onCalloutBalloonOfPOIItemTouched(
+        p0: MapView?,
+        p1: MapPOIItem?,
+        p2: MapPOIItem.CalloutBalloonButtonType?
+    ) {
+        Log.d("suee97", "말풍선 클릭 : ${p1?.itemName}")
+    }
+
+    override fun onDraggablePOIItemMoved(p0: MapView?, p1: MapPOIItem?, p2: MapPoint?) {
+        Log.d("suee97", "드래그 : ${p1?.itemName}")
+    }
+
 }
