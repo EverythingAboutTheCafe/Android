@@ -2,6 +2,10 @@ package com.camo.app.model
 
 import com.google.gson.annotations.SerializedName
 
+// -----------------------------------------------------------------------------
+// 카카오 맵 API 를 통해서 가져오는 정보입니다.
+// -----------------------------------------------------------------------------
+
 data class CafeInfo(
     @SerializedName("documents") val cafeInfos: List<CafeInfoUnit>,
     val meta: CafeMeta

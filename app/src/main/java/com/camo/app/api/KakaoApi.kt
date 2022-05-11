@@ -18,5 +18,5 @@ interface KakaoApi {
         @Query("y") y: String,
         @Query("page") page: Int
     ): Response<CafeInfo>
-
+    
 }

@@ -3,20 +3,34 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/atn1s/Desktop/camoandroid/app/src/main/res/drawable/background_green.xml" value="0.23425925925925925" />
+        <entry key="..\:/Users/atn1s/Desktop/camoandroid/app/src/main/res/drawable/background_grey.xml" value="0.23425925925925925" />
+        <entry key="..\:/Users/atn1s/Desktop/camoandroid/app/src/main/res/drawable/background_home_bottom_sheet.xml" value="0.23148148148148148" />
+        <entry key="..\:/Users/atn1s/Desktop/camoandroid/app/src/main/res/drawable/background_light_green.xml" value="0.23425925925925925" />
+        <entry key="..\:/Users/atn1s/Desktop/camoandroid/app/src/main/res/drawable/background_orange.xml" value="0.23425925925925925" />
+        <entry key="..\:/Users/atn1s/Desktop/camoandroid/app/src/main/res/drawable/ic_bottom_sheet.xml" value="0.23148148148148148" />
+        <entry key="..\:/Users/atn1s/Desktop/camoandroid/app/src/main/res/drawable/ic_bottom_sheet_handle.xml" value="0.23425925925925925" />
         <entry key="..\:/Users/atn1s/Desktop/camoandroid/app/src/main/res/drawable/ic_home_bottom_sheet.xml" value="0.21666666666666667" />
         <entry key="..\:/Users/atn1s/Desktop/camoandroid/app/src/main/res/drawable/ic_home_icon_gray.xml" value="0.23333333333333334" />
+        <entry key="..\:/Users/atn1s/Desktop/camoandroid/app/src/main/res/drawable/ic_like_off_icon.xml" value="0.22962962962962963" />
         <entry key="..\:/Users/atn1s/Desktop/camoandroid/app/src/main/res/drawable/ic_profile_icon.xml" value="0.22685185185185186" />
+        <entry key="..\:/Users/atn1s/Desktop/camoandroid/app/src/main/res/drawable/ic_test51.xml" value="0.22962962962962963" />
         <entry key="..\:/Users/atn1s/Desktop/camoandroid/app/src/main/res/drawable/selector_bottom_icon.xml" value="0.2222222222222222" />
         <entry key="..\:/Users/atn1s/Desktop/camoandroid/app/src/main/res/drawable/selector_home_icon.xml" value="0.23148148148148148" />
         <entry key="..\:/Users/atn1s/Desktop/camoandroid/app/src/main/res/drawable/selector_navigation_home.xml" value="0.23333333333333334" />
         <entry key="..\:/Users/atn1s/Desktop/camoandroid/app/src/main/res/drawable/selector_profile_icon.xml" value="0.23148148148148148" />
         <entry key="..\:/Users/atn1s/Desktop/camoandroid/app/src/main/res/drawable/selector_timeline_icon.xml" value="0.23148148148148148" />
         <entry key="..\:/Users/atn1s/Desktop/camoandroid/app/src/main/res/drawable/selector_write_icon.xml" value="0.23148148148148148" />
+        <entry key="..\:/Users/atn1s/Desktop/camoandroid/app/src/main/res/drawable/stroke_callout_ballon.xml" value="0.23425925925925925" />
+        <entry key="..\:/Users/atn1s/Desktop/camoandroid/app/src/main/res/drawable/stroke_search_tab.xml" value="0.2212962962962963" />
         <entry key="..\:/Users/atn1s/Desktop/camoandroid/app/src/main/res/layout/activity_main.xml" value="0.2" />
-        <entry key="..\:/Users/atn1s/Desktop/camoandroid/app/src/main/res/layout/fragment_home.xml" value="0.176" />
+        <entry key="..\:/Users/atn1s/Desktop/camoandroid/app/src/main/res/layout/fragment_home.xml" value="0.264" />
         <entry key="..\:/Users/atn1s/Desktop/camoandroid/app/src/main/res/layout/fragment_profile.xml" value="0.25364583333333335" />
         <entry key="..\:/Users/atn1s/Desktop/camoandroid/app/src/main/res/layout/fragment_timeline.xml" value="0.25364583333333335" />
         <entry key="..\:/Users/atn1s/Desktop/camoandroid/app/src/main/res/layout/fragment_write.xml" value="0.25364583333333335" />
+        <entry key="..\:/Users/atn1s/Desktop/camoandroid/app/src/main/res/layout/item_callout_ballon.xml" value="0.4" />
+        <entry key="..\:/Users/atn1s/Desktop/camoandroid/app/src/main/res/layout/item_post_image.xml" value="0.176" />
+        <entry key="..\:/Users/atn1s/Desktop/camoandroid/app/src/main/res/layout/item_timeline.xml" value="0.12335359675785208" />
         <entry key="..\:/Users/atn1s/Desktop/camoandroid/app/src/main/res/menu/main_menu.xml" value="0.25364583333333335" />
         <entry key="..\:/Users/user/Desktop/Camo/Android/app/src/main/res/drawable/background_green.xml" value="0.1" />
         <entry key="..\:/Users/user/Desktop/Camo/Android/app/src/main/res/drawable/background_grey.xml" value="0.147" />

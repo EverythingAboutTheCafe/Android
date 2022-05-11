@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ball_view"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" >
+
+    <TextView
+        android:id="@+id/tv_ballon_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="3dp"
+        android:background="@drawable/stroke_callout_ballon"
+        android:paddingStart="13dp"
+        android:paddingTop="7dp"
+        android:paddingEnd="13dp"
+        android:paddingBottom="7dp"
+        android:text="    "
+        android:textColor="@color/gray_09"
+        android:textSize="12sp"
+        tools:text="장소명"/>
+
+</LinearLayout>
