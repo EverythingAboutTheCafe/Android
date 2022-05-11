@@ -11,7 +11,6 @@ import com.google.android.material.tabs.TabLayoutMediator
 
 class TimelineAdapter : ListAdapter<Post, TimelineAdapter.TimelineViewHolder>(TimelineDiffCallback()) {
 
-    lateinit var items: ArrayList<Post>
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TimelineViewHolder {
         val binding = ItemTimelineBinding.inflate(LayoutInflater.from(parent.context), parent, false)
@@ -29,7 +28,6 @@ class TimelineAdapter : ListAdapter<Post, TimelineAdapter.TimelineViewHolder>(Ti
             with(binding.viewpagerTimelineImage) {
                 adapter = TimeLinePostImageAdapter().build(post.postImages)
                 TabLayoutMediator(binding.viewpagerTimelineImageIndicator, this) { tab, position ->
-
                 }.attach()
 
             }
