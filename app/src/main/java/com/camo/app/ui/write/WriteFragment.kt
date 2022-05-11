@@ -2,17 +2,28 @@ package com.camo.app.ui.write
 
 import android.annotation.SuppressLint
 import android.app.Activity.RESULT_OK
+import android.app.AlertDialog
 import android.content.Intent
+import android.content.res.Resources
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.net.Uri
 import android.os.Bundle
-import android.provider.MediaStore
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.Window
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
+import android.widget.NumberPicker
 import android.widget.Toast
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.core.content.ContextCompat
+import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import com.camo.app.R
+import com.camo.app.databinding.DialogVisitTimeBinding
 import com.camo.app.databinding.FragmentWriteBinding
 import com.camo.app.model.Images
 import dagger.hilt.android.AndroidEntryPoint
@@ -33,6 +44,9 @@ class WriteFragment : Fragment(){
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentWriteBinding.inflate(inflater, container, false)
+        binding.tvVisitTime.setOnClickListener {
+            callNumberPickerDialog(container)
+        }
         return binding.root
     }
 
@@ -41,6 +55,7 @@ class WriteFragment : Fragment(){
         super.onViewCreated(view, savedInstanceState)
 
         binding.lifecycleOwner=viewLifecycleOwner
+
         writePhotoAdapter = WritePhotoAdapter(uriList, requireContext(), onDeleteClick = {
             uriList.remove(it)
             writePhotoAdapter.notifyDataSetChanged()
@@ -84,4 +99,95 @@ class WriteFragment : Fragment(){
 
         binding.rvWritePhoto.adapter = writePhotoAdapter
     }
+
+    private fun callNumberPickerDialog(view: ViewGroup?) {
+        val inflater : LayoutInflater = requireActivity().layoutInflater
+        val dialogView : DialogVisitTimeBinding = DataBindingUtil.inflate(inflater, R.layout.dialog_visit_time, view, false)
+        val dataAMPM = arrayOf<String>("AM","PM")
+        val dataWeek = arrayOf<String>("평일","주말")
+        lateinit var selectAMPM:String
+        lateinit var selectWeek:String
+
+
+        var selectHour:Int = 0
+
+        val npHour = dialogView.npHour.apply {
+            maxValue = 12
+            minValue = 1
+            descendantFocusability=NumberPicker.FOCUS_BLOCK_DESCENDANTS
+        }
+
+        val npAmPm = dialogView.npAmpm.apply {
+            maxValue = 1
+            minValue = 0
+            displayedValues = dataAMPM
+            descendantFocusability=NumberPicker.FOCUS_BLOCK_DESCENDANTS
+        }
+
+        val npWeek = dialogView.npWeek.apply {
+            maxValue = 1
+            minValue = 0
+            displayedValues = dataWeek
+            descendantFocusability=NumberPicker.FOCUS_BLOCK_DESCENDANTS
+        }
+
+        val dialogBuilder : AlertDialog.Builder = AlertDialog.Builder(requireActivity()).apply {
+            setView(dialogView.root)
+        }
+
+        val dialog = dialogBuilder.create()
+        dialog?.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+        dialog?.window?.requestFeature(Window.FEATURE_NO_TITLE)
+        dialog.setCancelable(false)
+        dialog.show()
+
+        dialogView.btnVisitTimeCancel.setOnClickListener {
+            dialog.dismiss()
+        }
+
+        dialogView.btnVisitTimeOk.setOnClickListener {
+            selectHour = npHour.value
+            selectAMPM = setValueToAmPm(npAmPm.value)
+            selectWeek = setValueToWeek(npWeek.value)
+
+            binding.tvVisitTime.setTextColor(ContextCompat.getColor(requireContext(), R.color.black))
+            binding.tvVisitTime.text = getString(R.string.visit_time,selectWeek, selectAMPM, selectHour)
+            dialog.dismiss()
+        }
+
+
+
+    }
+
+    private fun setValueToAmPm(value: Int): String {
+        return if(value == 0) "오전"
+        else "오후"
+    }
+
+    private fun setValueToWeek(value: Int): String {
+        return if(value == 0) "평일"
+        else "주말"
+    }
+
+    private fun setDividerColor(picker: NumberPicker, color: Int) {
+        val pickerFields = NumberPicker::class.java.declaredFields
+        for (pf in pickerFields) {
+            if(pf.name == "mSelectionDivdier") {
+                pf.isAccessible = true
+                try {
+                    val colorDrawable = ColorDrawable(color)
+                    pf[this] = colorDrawable
+                } catch (e : java.lang.IllegalArgumentException) {
+                    e.printStackTrace()
+                } catch (e : Resources.NotFoundException) {
+                    e.printStackTrace()
+                } catch (e : IllegalAccessException) {
+                    e.printStackTrace()
+                }
+                break
+            }
+        }
+
+    }
+
 }

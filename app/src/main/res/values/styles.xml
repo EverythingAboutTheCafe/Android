@@ -34,11 +34,22 @@
         <item name="android:textSize">13sp</item>
     </style>
 
+    <!--NumberPicker Style-->
+    <style name="AppTheme.NumberPicker" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:textSize">20sp</item>
+        <item name="colorControlNormal">@color/white</item>
+    </style>
+
     <!-- View Style-->
     <style name="Divider">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">1dp</item>
         <item name="android:background">@color/bg_color02</item>
+    </style>
+
+    <style name="Divider.NumberPicker">
+        <item name="android:layout_height">0.5dp</item>
+        <item name="android:background">#CCCCCC</item>
     </style>
 
     <style name="EditTextStyle" parent="Widget.AppCompat.EditText">
@@ -47,4 +58,6 @@
         <item name="android:textColorHint">@color/default_grey</item>
         <item name="android:textColorHighlight">@color/violet</item>
     </style>
+
+
 </resources>

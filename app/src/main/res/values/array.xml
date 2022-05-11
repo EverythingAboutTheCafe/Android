@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="arr_visit_time">
+        <item>선택해주세요</item>
+        <item>오전 8시 - 12시</item>
+        <item>오후 12시 - 2시</item>
+        <item>오후 2시 - 6시</item>
+        <item>오후 6시 - 10시</item>
+        <item>오후 10시 이후</item>
+    </string-array>
+</resources>
