@@ -15,7 +15,7 @@ class HomeViewModel @Inject constructor(
     private val homeRepository: HomeRepository
 ) : ViewModel() {
 
-    val searchBartext: String = "노원구 공릉동"
+    val searchBartext: MutableLiveData<String> = MutableLiveData("노원구 공릉로")
     val cafeList: MutableLiveData<List<CafeInfoUnit>> = MutableLiveData()
     val tempList: MutableList<CafeInfoUnit> = mutableListOf()
 

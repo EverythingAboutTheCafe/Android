@@ -6,13 +6,14 @@ import android.content.Context
 import android.graphics.Color
 import android.location.Location
 import android.location.LocationManager
-import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.WindowManager
+import android.widget.FrameLayout
+import android.widget.TextView
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
@@ -21,17 +22,15 @@ import com.camo.app.databinding.FragmentHomeBinding
 import com.camo.app.utils.Constants.Companion.SMALL_RADIUS
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import dagger.hilt.android.AndroidEntryPoint
-import net.daum.mf.map.api.MapCircle
-import net.daum.mf.map.api.MapPOIItem
-import net.daum.mf.map.api.MapPoint
-import net.daum.mf.map.api.MapView
+import net.daum.mf.map.api.*
 
 @AndroidEntryPoint
 class HomeFragment : Fragment() {
     private lateinit var binding: FragmentHomeBinding
     private lateinit var locationManager: LocationManager
     private val viewModel: HomeViewModel by viewModels()
-    private val eventListener = OnMarkerClicked()
+    private lateinit var poiEventListener: OnMarkerClicked
+    private lateinit var customBallon: CustomBallonAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -41,6 +40,13 @@ class HomeFragment : Fragment() {
         viewModel.initializeCafeList()
         binding = FragmentHomeBinding.inflate(inflater, container, false)
         binding.viewModel = viewModel
+
+        // bottom sheet
+        val behavior = BottomSheetBehavior.from(binding.homeBottomSheet)
+        behavior.peekHeight = 136 // TODO px, dp 단위환산
+
+        poiEventListener = OnMarkerClicked(behavior)
+        customBallon = CustomBallonAdapter(inflater)
 
         return binding.root
 
@@ -55,16 +61,13 @@ class HomeFragment : Fragment() {
         // for observing live data (현기준 필수 아님)
         binding.lifecycleOwner = viewLifecycleOwner
 
-        // bottom sheet
-        val behavior = BottomSheetBehavior.from(binding.homeBottomSheet)
-        behavior.peekHeight = 72
-
         val mapView = MapView(activity)
         val mapViewContainer = view.findViewById<ViewGroup>(R.id.map_view)
         mapViewContainer.addView(mapView)
 
-        // 클릭이벤트 추가
-        mapView.setPOIItemEventListener(eventListener)
+        // 이벤트 추가
+        mapView.setPOIItemEventListener(poiEventListener)
+        mapView.setCalloutBalloonAdapter(customBallon)
 
         // 맵 띄우기
         initializeMap(mapView)
@@ -77,6 +80,7 @@ class HomeFragment : Fragment() {
         // Clear map
         mapView.removeAllCircles()
         mapView.removeAllPOIItems()
+        mapView.removeAllCircles()
 
         // 위치 정보
         val userLocation: Location? =
@@ -112,7 +116,11 @@ class HomeFragment : Fragment() {
         mapView.addCircle(circle)
 
         // 주변 카페 불러오기 + 표시
-        viewModel.getAllNearbyCafe(SMALL_RADIUS.toString(), userLongitude.toString(), userLatitude.toString())
+        viewModel.getAllNearbyCafe(
+            SMALL_RADIUS.toString(),
+            userLongitude.toString(),
+            userLatitude.toString()
+        )
         viewModel.cafeList.observe(this, Observer { res ->
             res.forEach {
                 val tempMarker = MapPOIItem()
@@ -120,36 +128,13 @@ class HomeFragment : Fragment() {
                 tempMarker.tag = 0
                 tempMarker.mapPoint =
                     MapPoint.mapPointWithGeoCoord(it.y.toDouble(), it.x.toDouble())
+                tempMarker.setCustomImageAnchor(0.5f, 0.5f)
                 tempMarker.markerType = MapPOIItem.MarkerType.CustomImage
                 tempMarker.customImageResourceId = R.drawable.map_cafe_icon
                 tempMarker.isCustomImageAutoscale = false
                 mapView.addPOIItem(tempMarker)
             }
         })
-
     }
 }
 
-// 마커 클릭 이벤트
-class OnMarkerClicked() : MapView.POIItemEventListener {
-    override fun onPOIItemSelected(p0: MapView?, p1: MapPOIItem?) {
-        Log.d("suee97", "아이템 클릭 : ${p1?.itemName}")
-    }
-
-    override fun onCalloutBalloonOfPOIItemTouched(p0: MapView?, p1: MapPOIItem?) {
-        Log.d("suee97", "말풍선 클릭 : ${p1?.itemName}")
-    }
-
-    override fun onCalloutBalloonOfPOIItemTouched(
-        p0: MapView?,
-        p1: MapPOIItem?,
-        p2: MapPOIItem.CalloutBalloonButtonType?
-    ) {
-        Log.d("suee97", "말풍선 클릭 : ${p1?.itemName}")
-    }
-
-    override fun onDraggablePOIItemMoved(p0: MapView?, p1: MapPOIItem?, p2: MapPoint?) {
-        Log.d("suee97", "드래그 : ${p1?.itemName}")
-    }
-
-}
