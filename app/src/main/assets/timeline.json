@@ -31,9 +31,11 @@
     {
       "post_id": 2,
       "title": {
-        "user_name": "s-ryuri",
-        "upload_time": "4월 14일",
-        "user_profile_image_url": "https://user-images.githubusercontent.com/50870417/165566993-2885e9f8-e40b-49ae-a001-fc700904217e.jpg"
+        "user": {
+          "user_name": "s-ryuri",
+          "user_profile_image_url": "https://user-images.githubusercontent.com/50870417/165566993-2885e9f8-e40b-49ae-a001-fc700904217e.jpg"
+        },
+        "upload_time": "4월 14일"
       },
       "post_images": [
         {
@@ -57,9 +59,11 @@
     {
       "post_id": 3,
       "title": {
-        "user_name": "suee97",
-        "upload_time": "4월 10일",
-        "user_profile_image_url": "https://user-images.githubusercontent.com/50870417/165479353-c716daee-d0a7-4467-9d64-623ac357546c.jpg"
+        "user": {
+          "user_name": "suee97",
+          "user_profile_image_url": "https://user-images.githubusercontent.com/50870417/165479353-c716daee-d0a7-4467-9d64-623ac357546c.jpg"
+        },
+        "upload_time": "4월 10일"
       },
       "post_images": [
         {
@@ -83,9 +87,11 @@
     {
       "post_id": 4,
       "title": {
-        "user_name": "suuu_bin24",
-        "upload_time": "4월 10일",
-        "user_profile_image_url": "https://user-images.githubusercontent.com/50870417/166285724-881edefb-0436-40bc-b857-ee24f77ccd27.jpg"
+        "user": {
+          "user_name": "suuu_bin24",
+          "user_profile_image_url": "https://user-images.githubusercontent.com/50870417/166285724-881edefb-0436-40bc-b857-ee24f77ccd27.jpg"
+        },
+        "upload_time": "4월 10일"
       },
       "post_images": [
         {

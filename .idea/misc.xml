@@ -52,6 +52,7 @@
         <entry key="..\:/Users/user/Desktop/Camo/Android/app/src/main/res/drawable/selected_viewpager_indicator.xml" value="0.1" />
         <entry key="..\:/Users/user/Desktop/Camo/Android/app/src/main/res/drawable/selector_bottom_icon.xml" value="0.1225" />
         <entry key="..\:/Users/user/Desktop/Camo/Android/app/src/main/res/drawable/selector_home_icon.xml" value="0.1" />
+        <entry key="..\:/Users/user/Desktop/Camo/Android/app/src/main/res/drawable/selector_like_btn.xml" value="0.1" />
         <entry key="..\:/Users/user/Desktop/Camo/Android/app/src/main/res/drawable/selector_profile_icon.xml" value="0.1" />
         <entry key="..\:/Users/user/Desktop/Camo/Android/app/src/main/res/drawable/selector_radio_btn.xml" value="0.2085" />
         <entry key="..\:/Users/user/Desktop/Camo/Android/app/src/main/res/drawable/selector_radio_btn_color.xml" value="0.2085" />
@@ -64,10 +65,10 @@
         <entry key="..\:/Users/user/Desktop/Camo/Android/app/src/main/res/layout/dialog_visit_time.xml" value="0.30097087378640774" />
         <entry key="..\:/Users/user/Desktop/Camo/Android/app/src/main/res/layout/fragment_home.xml" value="0.14210526315789473" />
         <entry key="..\:/Users/user/Desktop/Camo/Android/app/src/main/res/layout/fragment_profile.xml" value="0.264" />
-        <entry key="..\:/Users/user/Desktop/Camo/Android/app/src/main/res/layout/fragment_timeline.xml" value="0.264" />
+        <entry key="..\:/Users/user/Desktop/Camo/Android/app/src/main/res/layout/fragment_timeline.xml" value="0.21052631578947367" />
         <entry key="..\:/Users/user/Desktop/Camo/Android/app/src/main/res/layout/fragment_write.xml" value="0.264" />
         <entry key="..\:/Users/user/Desktop/Camo/Android/app/src/main/res/layout/item_post_image.xml" value="0.12994350282485875" />
-        <entry key="..\:/Users/user/Desktop/Camo/Android/app/src/main/res/layout/item_timeline.xml" value="0.1" />
+        <entry key="..\:/Users/user/Desktop/Camo/Android/app/src/main/res/layout/item_timeline.xml" value="0.1643598615916955" />
         <entry key="..\:/Users/user/Desktop/Camo/Android/app/src/main/res/layout/item_write.xml" value="0.4" />
         <entry key="..\:/Users/user/Desktop/Camo/Android/app/src/main/res/layout/item_write_photo.xml" value="0.264" />
         <entry key="..\:/Users/user/Desktop/Camo/Android/app/src/main/res/menu/main_menu.xml" value="0.1" />
