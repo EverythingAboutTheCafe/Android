@@ -15,7 +15,7 @@ class WriteViewModel: ViewModel() {
     private var _visitTime = MutableLiveData<String>()
     var visitTime : LiveData<String> = _visitTime
 
-    fun setVisitTime(visitTime : String) {
+    fun setVisitTime(visitTime: String) {
         _visitTime.value = visitTime
     }
 }

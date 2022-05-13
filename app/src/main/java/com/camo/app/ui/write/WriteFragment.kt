@@ -14,6 +14,8 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.NavController
+import androidx.navigation.findNavController
 import com.camo.app.R
 import com.camo.app.databinding.FragmentWriteBinding
 import com.camo.app.model.Images
@@ -74,8 +76,11 @@ class WriteFragment : Fragment(){
                     }
                 }
                 writePhotoAdapter.notifyDataSetChanged()
-
             }
+        }
+
+        binding.toolbarWriteCancel.setOnClickListener {
+            cancelWrite()
         }
 
         binding.btnAddPhoto.setOnClickListener{
@@ -94,9 +99,23 @@ class WriteFragment : Fragment(){
         }
 
         viewModel.visitTime.observe(viewLifecycleOwner) {
-            binding.tvVisitTime.text = it
-            binding.tvVisitTime.setTextColor(ContextCompat.getColor(requireContext(), R.color.black))
+            if(it.equals("")){
+                binding.tvVisitTime.text="선택해주세요"
+                binding.tvVisitTime.setTextColor(ContextCompat.getColor(requireContext(), R.color.default_grey))
+            } else {
+                binding.tvVisitTime.text = it
+                binding.tvVisitTime.setTextColor(ContextCompat.getColor(requireContext(), R.color.black))
+            }
         }
+    }
+
+    private fun cancelWrite() {
+        val navController: NavController = requireActivity().findNavController(R.id.container_main)
+        navController.run {
+            popBackStack()
+            navigate(R.id.navigation_write)
+        }
+        viewModel.setVisitTime("")
     }
 
 }

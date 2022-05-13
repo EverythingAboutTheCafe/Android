@@ -23,14 +23,18 @@ class TimelineAdapter : ListAdapter<Post, TimelineAdapter.TimelineViewHolder>(Ti
     }
 
     class TimelineViewHolder(private val binding: ItemTimelineBinding) : RecyclerView.ViewHolder(binding.root) {
+        val timelineImageAdapter = TimeLinePostImageAdapter()
+        val vpTLImg = binding.viewpagerTimelineImage
+
+        init {
+            vpTLImg.adapter = timelineImageAdapter
+            TabLayoutMediator(binding.viewpagerTimelineImageIndicator, vpTLImg) { tab, position ->
+            }.attach()
+        }
+
         fun bind(post: Post) {
             binding.post = post
-            with(binding.viewpagerTimelineImage) {
-                adapter = TimeLinePostImageAdapter().build(post.postImages)
-                TabLayoutMediator(binding.viewpagerTimelineImageIndicator, this) { tab, position ->
-                }.attach()
-
-            }
+            timelineImageAdapter.submitList(post.postImages)
             binding.executePendingBindings()
         }
     }
