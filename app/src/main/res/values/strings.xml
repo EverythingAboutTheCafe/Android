@@ -15,4 +15,5 @@
     <string name="congestion_very_bad">매우 혼잡</string>
     <string name="label_ok">확인</string>
     <string name="visit_time">%1$s %2$s %3$d시</string>
+    <string name="label_visit_time">방문시각 :</string>
 </resources>
