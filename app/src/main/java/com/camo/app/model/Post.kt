@@ -11,9 +11,13 @@ data class Post(
 )
 
 data class Title (
+    val user :User,
+    @SerializedName("upload_time") val uploadTime: String
+)
+
+data class User (
     @SerializedName("user_name") val userName: String,
     @SerializedName("user_profile_image_url") val userProfileImageUrl: String,
-    @SerializedName("upload_time") val uploadTime: String
 )
 
 data class Images (
