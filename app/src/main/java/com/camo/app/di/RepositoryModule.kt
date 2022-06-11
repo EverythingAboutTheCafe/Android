@@ -29,7 +29,7 @@ object RepositoryModule {
         kakaoApi: KakaoApi,
         @ApplicationContext context: Context
     ): HomeRepository {
-        return HomeRepository(kakaoApi)
+        return HomeRepository(kakaoApi, context)
     }
 
 }
