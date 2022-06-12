@@ -77,22 +77,7 @@
                     android:paddingHorizontal="16dp"
                     app:layout_constraintTop_toTopOf="@+id/home_bottom_sheet">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="근처 카페"
-                        android:textColor="@color/gray_09"
-                        android:textSize="20sp"
-                        app:layout_constraintStart_toStartOf="@+id/bottom_sheet_title_1"
-                        app:layout_constraintTop_toTopOf="@+id/bottom_sheet_title_1" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="3dp"
-                        android:text="전체보기"
-                        app:layout_constraintEnd_toEndOf="@+id/bottom_sheet_title_1"
-                        app:layout_constraintTop_toTopOf="@+id/bottom_sheet_title_1" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
             </androidx.constraintlayout.widget.ConstraintLayout>

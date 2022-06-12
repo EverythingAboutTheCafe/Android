@@ -22,7 +22,14 @@ import com.camo.app.databinding.FragmentHomeBinding
 import com.camo.app.utils.Constants.Companion.SMALL_RADIUS
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import net.daum.mf.map.api.*
+import org.jsoup.Jsoup
+import org.jsoup.nodes.Document
+import org.jsoup.nodes.Element
+import org.jsoup.select.Elements
 
 @AndroidEntryPoint
 class HomeFragment : Fragment() {
@@ -45,7 +52,7 @@ class HomeFragment : Fragment() {
         val behavior = BottomSheetBehavior.from(binding.homeBottomSheet)
         behavior.peekHeight = 136 // TODO px, dp 단위환산
 
-        poiEventListener = OnMarkerClicked(behavior)
+        poiEventListener = OnMarkerClicked(behavior, viewModel)
         customBallon = CustomBallonAdapter(inflater)
 
         return binding.root
@@ -71,6 +78,22 @@ class HomeFragment : Fragment() {
 
         // 맵 띄우기
         initializeMap(mapView)
+
+        // T E S T
+//        val getUrl: String = "https://place.map.kakao.com/main/v/19976696"
+//        val scope = CoroutineScope(Dispatchers.IO)
+//        scope.launch {
+//            val doc: Document = Jsoup.connect(getUrl).get()
+//
+//            Log.d("suee97", "doc : ${doc}")
+//
+//            doc.let {
+//                val mElementDatas: Elements? = doc.select(".list_operation")
+//                Log.d("suee97", "mElement ${mElementDatas?.size}")
+//                Log.d("suee97", "크롤링 되냐?")
+//            }
+//        }
+        // T E S T
 
     }
 

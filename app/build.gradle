@@ -78,4 +78,7 @@ dependencies {
 
     // Retrofit
     implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
+
+    // Jsoup
+    implementation 'org.jsoup:jsoup:1.11.3'
 }
