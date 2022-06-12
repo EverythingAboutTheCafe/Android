@@ -22,7 +22,7 @@ class OnMarkerClicked(
         if(!viewModel.cafeList.value.isNullOrEmpty()) {
             for(i in 0..viewModel.cafeList.value!!.size - 1) {
                 if(viewModel.cafeList.value!![i].place_name == p1?.itemName)
-                    Log.d("suee97", "id ▶ ${viewModel.cafeList.value!![i].id}")
+                    viewModel.getCafeInfoDetail(viewModel.cafeList.value!![i].id.toInt())
             }
         }
     }
