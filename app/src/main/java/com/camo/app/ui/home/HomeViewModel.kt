@@ -81,7 +81,6 @@ class HomeViewModel @Inject constructor(
                 try {
                     val tempPeriodList = JSONObject(tempBasicInfo.getString("openHour"))
                         .getString("periodList")
-
                     Log.d("suee97", "${JSONArray(tempPeriodList)[0]}")
                 } catch(e: Exception) {
                     Log.d("suee97", "없음")
