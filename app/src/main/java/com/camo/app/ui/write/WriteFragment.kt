@@ -5,14 +5,18 @@ import android.app.Activity.RESULT_OK
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
-import android.provider.MediaStore
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
+import androidx.navigation.NavController
+import androidx.navigation.findNavController
+import com.camo.app.R
 import com.camo.app.databinding.FragmentWriteBinding
 import com.camo.app.model.Images
 import dagger.hilt.android.AndroidEntryPoint
@@ -20,6 +24,7 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class WriteFragment : Fragment(){
 
+    private val viewModel : WriteViewModel by activityViewModels()
 
     private lateinit var binding : FragmentWriteBinding
     private lateinit var getResult: ActivityResultLauncher<Intent>
@@ -41,6 +46,7 @@ class WriteFragment : Fragment(){
         super.onViewCreated(view, savedInstanceState)
 
         binding.lifecycleOwner=viewLifecycleOwner
+
         writePhotoAdapter = WritePhotoAdapter(uriList, requireContext(), onDeleteClick = {
             uriList.remove(it)
             writePhotoAdapter.notifyDataSetChanged()
@@ -70,8 +76,11 @@ class WriteFragment : Fragment(){
                     }
                 }
                 writePhotoAdapter.notifyDataSetChanged()
-
             }
+        }
+
+        binding.toolbarWriteCancel.setOnClickListener {
+            cancelWrite()
         }
 
         binding.btnAddPhoto.setOnClickListener{
@@ -83,5 +92,30 @@ class WriteFragment : Fragment(){
         }
 
         binding.rvWritePhoto.adapter = writePhotoAdapter
+
+        binding.tvVisitTime.setOnClickListener {
+            val dialog = VisitTimeDialogFragment()
+            dialog.show(childFragmentManager, "VisitTimeDialogFragment")
+        }
+
+        viewModel.visitTime.observe(viewLifecycleOwner) {
+            if(it.equals("")){
+                binding.tvVisitTime.text="선택해주세요"
+                binding.tvVisitTime.setTextColor(ContextCompat.getColor(requireContext(), R.color.default_grey))
+            } else {
+                binding.tvVisitTime.text = it
+                binding.tvVisitTime.setTextColor(ContextCompat.getColor(requireContext(), R.color.black))
+            }
+        }
     }
+
+    private fun cancelWrite() {
+        val navController: NavController = requireActivity().findNavController(R.id.container_main)
+        navController.run {
+            popBackStack()
+            navigate(R.id.navigation_write)
+        }
+        viewModel.setVisitTime("")
+    }
+
 }

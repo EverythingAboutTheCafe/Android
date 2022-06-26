@@ -14,12 +14,6 @@ class TimeLinePostImageAdapter:ListAdapter<Images, TimeLinePostImageAdapter.Time
 
     private lateinit var binding: ItemPostImageBinding
 
-    lateinit var items : List<Images>
-
-    fun build(i: List<Images>) : TimeLinePostImageAdapter {
-        items = i
-        return this
-    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TimeLinePostImageViewHolder {
         binding = ItemPostImageBinding.inflate(LayoutInflater.from(parent.context), parent, false)
@@ -27,10 +21,8 @@ class TimeLinePostImageAdapter:ListAdapter<Images, TimeLinePostImageAdapter.Time
     }
 
     override fun onBindViewHolder(holder: TimeLinePostImageViewHolder, position: Int) {
-        holder.bind(items[position])
+        holder.bind(getItem(position))
     }
-
-    override fun getItemCount(): Int = items.size
 
     class TimeLinePostImageViewHolder(private val binding: ItemPostImageBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(images: Images) {

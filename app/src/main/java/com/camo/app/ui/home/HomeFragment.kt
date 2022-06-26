@@ -80,7 +80,6 @@ class HomeFragment : Fragment() {
 
     @SuppressLint("MissingPermission")
     private fun initializeMap(mapView: MapView) {
-
         // Clear map
         mapView.removeAllCircles()
         mapView.removeAllPOIItems()
@@ -125,7 +124,7 @@ class HomeFragment : Fragment() {
             userLongitude.toString(),
             userLatitude.toString()
         )
-        viewModel.cafeList.observe(this, Observer { res ->
+        viewModel.cafeList.observe(viewLifecycleOwner, Observer { res ->
             res.forEach {
                 val tempMarker = MapPOIItem()
                 tempMarker.itemName = it.place_name

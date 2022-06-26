@@ -4,6 +4,9 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.Animation
+import android.view.animation.BounceInterpolator
+import android.view.animation.ScaleAnimation
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.camo.app.databinding.FragmentTimelineBinding
@@ -30,7 +33,9 @@ class TimelineFragment : Fragment() {
         binding.lifecycleOwner = viewLifecycleOwner
 
         val timelineAdapter = TimelineAdapter()
+
         binding.rvTimeline.adapter = timelineAdapter
+
         viewModel.posts.observe(viewLifecycleOwner) {
             timelineAdapter.submitList(it)
         }

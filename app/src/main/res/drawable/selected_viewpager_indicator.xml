@@ -4,7 +4,11 @@
     android:shape="ring"
     android:thickness="4dp"
     android:useLevel="false">
+<<<<<<< HEAD
 
     <solid android:color="@color/orange_01" />
 
+=======
+    <solid android:color="@color/white" />
+>>>>>>> origin/writebranch
 </shape>
