@@ -4,11 +4,12 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.animation.Animation
-import android.view.animation.BounceInterpolator
-import android.view.animation.ScaleAnimation
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.recyclerview.widget.ConcatAdapter
+import com.camo.app.common.PostAdapter
+import com.camo.app.common.PostCafeAdapter
+import com.camo.app.common.PostTitleAdapter
 import com.camo.app.databinding.FragmentTimelineBinding
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -32,13 +33,12 @@ class TimelineFragment : Fragment() {
 
         binding.lifecycleOwner = viewLifecycleOwner
 
-        val timelineAdapter = TimelineAdapter()
+        val timelinePostAdapter = TimelinePostAdapter()
 
-        binding.rvTimeline.adapter = timelineAdapter
+        binding.rvTimeline.adapter = timelinePostAdapter
 
         viewModel.posts.observe(viewLifecycleOwner) {
-            timelineAdapter.submitList(it)
+            timelinePostAdapter.submitList(it)
         }
-
     }
 }

@@ -34,3 +34,8 @@ fun setTextView(view: TextView, congestion: Int) {
     }
 }
 
+@BindingAdapter("postCount")
+fun setPostCountText(view : TextView, postCount: Int) {
+    view.text = view.context.getString(R.string.user_posts_count, postCount)
+}
+

@@ -1,7 +1,6 @@
 package com.camo.app.repository
 
 import android.content.Context
-import android.util.Log
 import com.camo.app.AssetLoader
 import com.camo.app.model.Timeline
 import com.google.gson.Gson

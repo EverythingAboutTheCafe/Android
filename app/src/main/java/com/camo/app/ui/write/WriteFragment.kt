@@ -101,10 +101,10 @@ class WriteFragment : Fragment(){
         viewModel.visitTime.observe(viewLifecycleOwner) {
             if(it.equals("")){
                 binding.tvVisitTime.text="선택해주세요"
-                binding.tvVisitTime.setTextColor(ContextCompat.getColor(requireContext(), R.color.default_grey))
+                binding.tvVisitTime.setTextColor(ContextCompat.getColor(requireContext(), R.color.grey03))
             } else {
                 binding.tvVisitTime.text = it
-                binding.tvVisitTime.setTextColor(ContextCompat.getColor(requireContext(), R.color.black))
+                binding.tvVisitTime.setTextColor(ContextCompat.getColor(requireContext(), R.color.grey09))
             }
         }
     }

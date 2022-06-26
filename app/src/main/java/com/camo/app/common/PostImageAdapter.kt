@@ -1,4 +1,4 @@
-package com.camo.app.ui.timeline
+package com.camo.app.common
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -8,23 +8,23 @@ import androidx.recyclerview.widget.RecyclerView
 import com.camo.app.databinding.ItemPostImageBinding
 import com.camo.app.model.Images
 
-class TimeLinePostImageAdapter:ListAdapter<Images, TimeLinePostImageAdapter.TimeLinePostImageViewHolder> (
+class PostImageAdapter:ListAdapter<Images, PostImageAdapter.PostImageViewHolder> (
     ImageDiffCallback()
         ) {
 
     private lateinit var binding: ItemPostImageBinding
 
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TimeLinePostImageViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PostImageViewHolder {
         binding = ItemPostImageBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        return TimeLinePostImageViewHolder(binding)
+        return PostImageViewHolder(binding)
     }
 
-    override fun onBindViewHolder(holder: TimeLinePostImageViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: PostImageViewHolder, position: Int) {
         holder.bind(getItem(position))
     }
 
-    class TimeLinePostImageViewHolder(private val binding: ItemPostImageBinding) : RecyclerView.ViewHolder(binding.root) {
+    class PostImageViewHolder(private val binding: ItemPostImageBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(images: Images) {
             binding.images = images
             binding.executePendingBindings()
