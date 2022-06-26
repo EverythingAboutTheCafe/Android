@@ -1,10 +1,12 @@
 package com.camo.app.ui.timeline
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.view.animation.Animation
 import android.view.animation.BounceInterpolator
 import android.view.animation.ScaleAnimation
+import android.widget.Toast
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.camo.app.common.PostDiffCallback
@@ -15,21 +17,28 @@ import com.camo.app.databinding.ItemPostTitleBinding
 import com.camo.app.model.Post
 import com.google.android.material.tabs.TabLayoutMediator
 
-class TimelinePostAdapter : ListAdapter<Post, TimelinePostAdapter.PostViewHolder>(PostDiffCallback()) {
+class TimelinePostAdapter :
+    ListAdapter<Post, TimelinePostAdapter.PostViewHolder>(PostDiffCallback()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PostViewHolder {
-        val itemPostBinding = ItemPostBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        val itemPostCafeBinding = ItemPostCafeBinding.inflate(LayoutInflater.from(parent.context),parent,false)
-        val itemPostTitleBinding = ItemPostTitleBinding.inflate(LayoutInflater.from(parent.context),parent,false)
+        val itemPostBinding =
+            ItemPostBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        val itemPostCafeBinding =
+            ItemPostCafeBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        val itemPostTitleBinding =
+            ItemPostTitleBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return PostViewHolder(itemPostTitleBinding, itemPostBinding, itemPostCafeBinding)
     }
-
 
     override fun onBindViewHolder(holder: PostViewHolder, position: Int) {
         holder.bind(getItem(position))
     }
 
-    class PostViewHolder(val titleBinding: ItemPostTitleBinding, var binding: ItemPostBinding, val cafeBinding: ItemPostCafeBinding) : RecyclerView.ViewHolder(binding.root) {
+    class PostViewHolder(
+        val titleBinding: ItemPostTitleBinding,
+        var binding: ItemPostBinding,
+        val cafeBinding: ItemPostCafeBinding
+    ) : RecyclerView.ViewHolder(binding.root) {
         private val timelineImageAdapter = PostImageAdapter()
         private val vpTLImg = binding.viewpagerTimelineImage
         private val scaleAnimation = ScaleAnimation(
@@ -58,6 +67,7 @@ class TimelinePostAdapter : ListAdapter<Post, TimelinePostAdapter.PostViewHolder
             cafeBinding.cafe = post.cafe
             timelineImageAdapter.submitList(post.postImages)
             setLikeBtnAnimation()
+            setCafeBindingClickListener()
             binding.executePendingBindings()
         }
 
@@ -66,6 +76,12 @@ class TimelinePostAdapter : ListAdapter<Post, TimelinePostAdapter.PostViewHolder
             scaleAnimation.interpolator = bounceInterpolator
             cafeBinding.btnPostCafeLike.setOnCheckedChangeListener { buttonView, isChecked ->
                 buttonView.startAnimation(scaleAnimation)
+            }
+        }
+
+        private fun setCafeBindingClickListener() {
+            cafeBinding.bgCafeInfo.setOnClickListener {
+                // TODO navigate to cafe detail screen
             }
         }
 
