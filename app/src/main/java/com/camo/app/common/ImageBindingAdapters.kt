@@ -12,6 +12,9 @@ fun loadImage(view: ImageView, imageUrl:String?) {
             .load(imageUrl)
             .into(view)
     }
+    else {
+        view.layoutParams.height = 0
+    }
 }
 
 @BindingAdapter("isLike")

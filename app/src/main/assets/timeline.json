@@ -11,10 +11,7 @@
       },
       "post_images": [
         {
-          "post_image_url": "https://user-images.githubusercontent.com/50870417/165479349-424c60fb-3780-4786-828c-6b66d66de7de.jpg"
-        },
-        {
-          "post_image_url": "https://user-images.githubusercontent.com/50870417/165479340-3851d248-cb0c-426e-afac-8d1d63428159.jpg"
+          "post_image_url" : null
         }
       ],
       "content": {

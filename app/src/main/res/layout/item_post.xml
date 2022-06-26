@@ -24,9 +24,8 @@
         <androidx.viewpager2.widget.ViewPager2
             android:id="@+id/viewpager_timeline_image"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_height="wrap_content"
             tools:layout="@layout/item_post_image"
-            app:layout_constraintDimensionRatio="w, 0.93:1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/container_post_title">
@@ -45,6 +44,174 @@
             app:tabGravity="center"
             app:tabIndicatorHeight="0dp" />
 
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_expand"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/viewpager_timeline_image" >
+
+            <TextView
+                android:id="@+id/tv_visiting_time"
+                style="@style/InfoText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="17dp"
+                android:layout_marginStart="16dp"
+                android:text="@string/label_visit_time"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_visiting_time_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="3.3dp"
+                android:text="@{post.content.visitTime}"
+                style="@style/InfoText"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_visiting_time"
+                app:layout_constraintStart_toEndOf="@+id/tv_visiting_time"
+                tools:text="평일 오후3시" />
+
+            <TextView
+                android:id="@+id/tv_subtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/tv_visiting_time"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="29dp"
+                android:layout_marginStart="31dp"
+                style="@style/Regular.SubTitle"
+                android:text="상세정보"/>
+
+            <ImageView
+                android:layout_width="14dp"
+                android:layout_height="8dp"
+                android:src="@drawable/ic_arrow_icon"
+                android:layout_marginEnd="32dp"
+                android:layout_marginTop="72dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <View
+                android:id="@+id/icon_congestion"
+                android:layout_width="56dp"
+                android:layout_height="55dp"
+                android:layout_marginStart="33dp"
+                android:layout_marginTop="14dp"
+                android:background="@drawable/background_orange"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_subtitle"
+                />
+
+            <View
+                android:id="@+id/icon_outlet"
+                android:layout_width="56dp"
+                android:layout_height="55dp"
+                android:background="@drawable/background_green"
+                app:layout_constraintStart_toEndOf="@+id/icon_congestion"
+                app:layout_constraintEnd_toStartOf="@+id/icon_table"
+                app:layout_constraintTop_toTopOf="@+id/icon_congestion"
+                />
+
+            <View
+                android:id="@+id/icon_table"
+                android:layout_width="56dp"
+                android:layout_height="55dp"
+                android:background="@drawable/background_light_orange"
+                app:layout_constraintStart_toEndOf="@+id/icon_outlet"
+                app:layout_constraintEnd_toStartOf="@id/icon_parking"
+                app:layout_constraintTop_toTopOf="@+id/icon_congestion"
+                />
+
+            <View
+                android:id="@+id/icon_parking"
+                android:layout_width="56dp"
+                android:layout_height="55dp"
+                android:background="@drawable/background_light_green"
+                app:layout_constraintStart_toEndOf="@+id/icon_table"
+                app:layout_constraintEnd_toStartOf="@+id/icon_purpose"
+                app:layout_constraintTop_toTopOf="@+id/icon_congestion"
+                />
+
+            <View
+                android:id="@+id/icon_purpose"
+                android:layout_width="56dp"
+                android:layout_height="55dp"
+                android:layout_marginEnd="33dp"
+                android:background="@drawable/background_green"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/icon_congestion"
+                />
+
+            <TextView
+                android:id="@+id/tv_congestion_info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                style="@style/InfoText"
+                congestion="@{post.content.congestion}"
+                app:layout_constraintStart_toStartOf="@id/icon_congestion"
+                app:layout_constraintTop_toBottomOf="@id/icon_congestion"
+                android:text="자리 다소 혼잡"/>
+
+            <TextView
+                android:id="@+id/tv_outlet"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                style="@style/InfoText"
+                app:layout_constraintStart_toStartOf="@id/icon_congestion"
+                app:layout_constraintTop_toBottomOf="@id/tv_congestion_info"
+                android:text="콘센트 자리마다 있음"/>
+
+            <TextView
+                android:id="@+id/tv_table"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                style="@style/InfoText"
+                app:layout_constraintStart_toStartOf="@id/icon_congestion"
+                app:layout_constraintTop_toBottomOf="@id/tv_outlet"
+                android:text="테이블 커서 작업하기 좋음"/>
+
+            <TextView
+                android:id="@+id/tv_parking"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                style="@style/InfoText"
+                app:layout_constraintStart_toStartOf="@id/icon_congestion"
+                app:layout_constraintTop_toBottomOf="@id/tv_table"
+                android:text="주차 공간 협소"/>
+
+            <TextView
+                android:id="@+id/tv_purpose"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                style="@style/InfoText"
+                app:layout_constraintStart_toStartOf="@id/icon_congestion"
+                app:layout_constraintTop_toBottomOf="@id/tv_parking"
+                android:text="공부 70% 수다30%"/>
+
+            <View
+                android:layout_width="match_parent"
+                style="@style/Divider"
+                android:layout_marginTop="32dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_purpose" />
+
+
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
         <TextView
             android:id="@+id/tv_post_label"
             android:layout_width="0dp"
@@ -58,53 +225,14 @@
             style="@style/Regular"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/viewpager_timeline_image"
+            app:layout_constraintTop_toBottomOf="@+id/layout_expand"
             tools:text="블루라떼가 맛있었다. 자리마다 콘센트 있어서 작업하기 좋음" />
-
-        <TextView
-            android:id="@+id/tv_visiting_time"
-            style="@style/InfoText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:text="@string/label_visit_time"
-            app:layout_constraintStart_toStartOf="@id/tv_post_label"
-            app:layout_constraintTop_toBottomOf="@+id/tv_post_label" />
-
-        <TextView
-            android:id="@+id/tv_visiting_time_value"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="3.3dp"
-            android:text="@{post.content.visitTime}"
-            style="@style/InfoText"
-            app:layout_constraintBottom_toBottomOf="@+id/tv_visiting_time"
-            app:layout_constraintStart_toEndOf="@+id/tv_visiting_time"
-            tools:text="평일 오후3시" />
-
-        <TextView
-            android:id="@+id/tv_congestion"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:background="@drawable/background_orange"
-            android:paddingStart="12dp"
-            android:paddingTop="3dp"
-            android:paddingEnd="12dp"
-            android:paddingBottom="3dp"
-            android:textColor="@color/orange01"
-            android:textSize="13sp"
-            congestion="@{post.content.congestion}"
-            app:layout_constraintBaseline_toBaselineOf="@id/tv_visiting_time"
-            app:layout_constraintBottom_toBottomOf="@id/tv_visiting_time"
-            app:layout_constraintStart_toEndOf="@+id/tv_visiting_time_value"
-            tools:text="다소 혼잡" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/container_post_cafe_title"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/tv_congestion"
+            app:layout_constraintTop_toBottomOf="@id/tv_post_label"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"/>
 

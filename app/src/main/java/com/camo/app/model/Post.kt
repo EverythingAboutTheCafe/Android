@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName
 data class Post(
     @SerializedName("post_id") val postId :String,
     @SerializedName("post_title") val postTitle :Title,
-    @SerializedName("post_images")val postImages: List<Images>,
+    @SerializedName("post_images")val postImages: List<Images>?,
     val content: Content,
     val cafe: Cafe
 )
@@ -21,7 +21,7 @@ data class User (
 )
 
 data class Images (
-    @SerializedName("post_image_url") var postImageUrl: String
+    @SerializedName("post_image_url") var postImageUrl: String?
 )
 
 data class Content (

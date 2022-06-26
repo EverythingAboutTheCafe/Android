@@ -14,8 +14,11 @@
 
         <ImageView
             android:id="@+id/iv_timeline_post_image"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:layout_height="336dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
             imageUrl="@{images.postImageUrl}"
             android:scaleType="centerCrop" />
 
