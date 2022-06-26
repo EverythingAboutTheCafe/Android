@@ -10,8 +10,9 @@ import javax.inject.Inject
 
 @HiltViewModel
 class TimelineViewModel @Inject constructor(
-    private var timelineRepository: TimelineRepository
-    ) : ViewModel() {
+
+    private val timelineRepository: TimelineRepository
+) : ViewModel() {
 
     private var _posts = MutableLiveData<List<Post>>()
     var posts: LiveData<List<Post>> = _posts

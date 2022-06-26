@@ -1,7 +1,8 @@
 package com.camo.app.di
 
 import android.content.Context
-import com.camo.app.repository.ProfileRepository
+import com.camo.app.api.KakaoApi
+import com.camo.app.repository.HomeRepository
 import com.camo.app.repository.TimelineRepository
 import dagger.Module
 import dagger.Provides
@@ -25,10 +26,11 @@ object RepositoryModule {
 
     @Singleton
     @Provides
-    fun provideProfileRepository(
+    fun provideHomeRepository(
+        kakaoApi: KakaoApi,
         @ApplicationContext context: Context
-    ): ProfileRepository {
-        return ProfileRepository(context)
+    ): HomeRepository {
+        return HomeRepository(kakaoApi, context)
     }
 
 }

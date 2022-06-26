@@ -1,9 +1,9 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.Camoandroid" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <style name="Theme.Camoandroid" parent="Theme.MaterialComponents.Light.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/orange01</item>
-        <item name="colorPrimaryVariant">@color/orange01</item>
+        <item name="colorPrimary">@color/orange_01</item>
+        <item name="colorPrimaryVariant">@color/orange_01</item>
         <item name="colorOnPrimary">@color/black</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/violet</item>
@@ -13,4 +13,5 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+
 </resources>

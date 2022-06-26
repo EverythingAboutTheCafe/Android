@@ -88,11 +88,19 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:background="@drawable/background_orange"
+<<<<<<< HEAD
+            android:paddingStart="8dp"
+            android:paddingTop="4dp"
+            android:paddingEnd="8dp"
+            android:paddingBottom="4dp"
+            android:textColor="@color/orange_01"
+=======
             android:paddingStart="12dp"
             android:paddingTop="3dp"
             android:paddingEnd="12dp"
             android:paddingBottom="3dp"
             android:textColor="@color/orange01"
+>>>>>>> origin/writebranch
             android:textSize="13sp"
             congestion="@{post.content.congestion}"
             app:layout_constraintBaseline_toBaselineOf="@id/tv_visiting_time"
