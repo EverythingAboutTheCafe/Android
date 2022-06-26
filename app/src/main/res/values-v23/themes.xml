@@ -1,5 +1,5 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
 
     <style name="Theme.Camoandroid" parent="Theme.AppCompat.Light.NoActionBar">
 
@@ -17,5 +17,4 @@
         <!-- Customize your theme here. -->
         <item name="android:windowBackground">@color/white</item>
     </style>
-
 </resources>
