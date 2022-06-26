@@ -11,9 +11,6 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.FrameLayout
-import android.widget.TextView
-import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
@@ -26,10 +23,10 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import net.daum.mf.map.api.*
+import org.json.JSONArray
+import org.json.JSONObject
 import org.jsoup.Jsoup
 import org.jsoup.nodes.Document
-import org.jsoup.nodes.Element
-import org.jsoup.select.Elements
 
 @AndroidEntryPoint
 class HomeFragment : Fragment() {
@@ -78,22 +75,6 @@ class HomeFragment : Fragment() {
 
         // 맵 띄우기
         initializeMap(mapView)
-
-        // T E S T
-//        val getUrl: String = "https://place.map.kakao.com/main/v/19976696"
-//        val scope = CoroutineScope(Dispatchers.IO)
-//        scope.launch {
-//            val doc: Document = Jsoup.connect(getUrl).get()
-//
-//            Log.d("suee97", "doc : ${doc}")
-//
-//            doc.let {
-//                val mElementDatas: Elements? = doc.select(".list_operation")
-//                Log.d("suee97", "mElement ${mElementDatas?.size}")
-//                Log.d("suee97", "크롤링 되냐?")
-//            }
-//        }
-        // T E S T
 
     }
 
