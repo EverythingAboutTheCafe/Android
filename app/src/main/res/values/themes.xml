@@ -1,7 +1,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
 
-    <style name="Theme.Camoandroid" parent="Theme.MaterialComponents.Light.NoActionBar">
+    <style name="Theme.Camoandroid" parent="Theme.AppCompat.Light.NoActionBar">
 
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/orange01</item>
