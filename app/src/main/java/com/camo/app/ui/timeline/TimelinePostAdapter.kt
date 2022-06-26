@@ -7,8 +7,10 @@ import android.view.animation.Animation
 import android.view.animation.BounceInterpolator
 import android.view.animation.ScaleAnimation
 import android.widget.Toast
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.camo.app.R
 import com.camo.app.common.PostDiffCallback
 import com.camo.app.common.PostImageAdapter
 import com.camo.app.databinding.ItemPostBinding
@@ -81,7 +83,7 @@ class TimelinePostAdapter :
 
         private fun setCafeBindingClickListener() {
             cafeBinding.bgCafeInfo.setOnClickListener {
-                // TODO navigate to cafe detail screen
+                it.findNavController().navigate(R.id.action_navigation_timeline_to_cafeDetailFragment)
             }
         }
 

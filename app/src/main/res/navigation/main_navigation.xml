@@ -12,7 +12,11 @@
     <fragment
         android:id="@+id/navigation_timeline"
         android:name="com.camo.app.ui.timeline.TimelineFragment"
-        android:label="TimelineFragment" />
+        android:label="TimelineFragment" >
+        <action
+            android:id="@+id/action_navigation_timeline_to_cafeDetailFragment"
+            app:destination="@id/cafeDetailFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_write"
@@ -23,5 +27,10 @@
         android:id="@+id/navigation_profile"
         android:name="com.camo.app.ui.profile.ProfileFragment"
         android:label="ProfileFragment" />
+
+    <fragment
+        android:id="@+id/cafeDetailFragment"
+        android:name="com.camo.app.ui.timeline.cafe_detail.CafeDetailFragment"
+        android:label="CafeDetailFragment" />
 
 </navigation>

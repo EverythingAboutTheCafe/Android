@@ -68,7 +68,9 @@
         <entry key="..\:/Users/user/Desktop/Camo/Android/app/src/main/res/menu/main_menu.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.35507246376811596" />
         <entry key="app/src/main/res/layout/dialog_visit_time.xml" value="0.35507246376811596" />
+        <entry key="app/src/main/res/layout/fragment_cafe_detail.xml" value="0.35507246376811596" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.25567779541015623" />
+        <entry key="app/src/main/res/layout/fragment_profile.xml" value="0.35507246376811596" />
         <entry key="app/src/main/res/layout/fragment_timeline.xml" value="0.35507246376811596" />
         <entry key="app/src/main/res/layout/fragment_write.xml" value="0.35507246376811596" />
         <entry key="app/src/main/res/layout/item_cafe.xml" value="0.35507246376811596" />
