@@ -12,7 +12,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginRight="12dp">
+        android:layout_marginEnd="8dp">
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cv_background"
@@ -28,6 +28,7 @@
                 android:layout_width="96dp"
                 android:layout_height="96dp"
                 android:background="@drawable/background_grey"
+                android:scaleType="centerCrop"
                 imageUrl="@{image.postImageUrl}"/>
         </androidx.cardview.widget.CardView>
 
@@ -37,7 +38,7 @@
             android:layout_height="22dp"
             android:layout_marginEnd="4dp"
             android:layout_marginTop="4dp"
-            android:padding="4dp"
+            android:padding="7.33dp"
             android:scaleType="centerCrop"
             android:src="@drawable/btn_delete"
             android:background="@drawable/btn_circle_button"

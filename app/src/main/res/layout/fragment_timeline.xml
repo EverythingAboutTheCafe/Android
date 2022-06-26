@@ -22,7 +22,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="end"
-                    android:layout_marginEnd="15dp"
+                    android:layout_marginEnd="18dp"
                     android:src="@drawable/ic_search_icon" />
 
                 <TextView
@@ -45,7 +45,7 @@
             android:descendantFocusability="blocksDescendants"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
-            tools:listitem="@layout/item_timeline" />
+            tools:listitem="@layout/item_post" />
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 

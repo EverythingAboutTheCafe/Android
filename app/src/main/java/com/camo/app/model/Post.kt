@@ -4,14 +4,14 @@ import com.google.gson.annotations.SerializedName
 
 data class Post(
     @SerializedName("post_id") val postId :String,
-    val title :Title,
+    @SerializedName("post_title") val postTitle :Title,
     @SerializedName("post_images")val postImages: List<Images>,
     val content: Content,
     val cafe: Cafe
 )
 
 data class Title (
-    val user :User,
+    val user :User?,
     @SerializedName("upload_time") val uploadTime: String
 )
 
@@ -32,6 +32,7 @@ data class Content (
 
 data class Cafe (
     @SerializedName("cafe_name") val cafeName: String,
+    @SerializedName("cafe_thumbnail") val cafeThumbnail: String?,
     @SerializedName("cafe_address") val cafeAddress: String,
     @SerializedName("cafe_like") val cafeLike: Boolean
 )

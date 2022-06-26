@@ -16,4 +16,6 @@
     <string name="label_ok">확인</string>
     <string name="visit_time">%1$s %2$s %3$d시</string>
     <string name="label_visit_time">방문시각 :</string>
+    <string name="label_write_subtitle">정보를 공유해주세요:)</string>
+    <string name="user_posts_count">%d개</string>
 </resources>
